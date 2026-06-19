@@ -1,0 +1,18 @@
+{
+	"node": "n8n-nodes-weclapp-weclapp",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": ["Finance & Accounting", "Productivity", "Sales"],
+	"resources": {
+		"credentialDocumentation": [
+			{
+				"url": "https://www.weclapp.com/api/#overview--security-and-authentication"
+			}
+		],
+		"primaryDocumentation": [
+			{
+				"url": "https://www.weclapp.com/api/"
+			}
+		]
+	}
+}
