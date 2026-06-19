@@ -7,6 +7,7 @@ export const pageQueryParameter: INodeProperties = {
 	typeOptions: {
 		minValue: 1,
 	},
+	placeholder: '1',
 	default: undefined,
 	description: 'The page number to retrieve',
 	routing: {
@@ -25,6 +26,7 @@ export const pageSizeQueryParameter: INodeProperties = {
 		minValue: 1,
 		maxValue: 1000,
 	},
+	placeholder: '100',
 	default: undefined,
 	description: 'The number of items to retrieve per page',
 	routing: {
@@ -42,6 +44,7 @@ export const offsetQueryParameter: INodeProperties = {
 	typeOptions: {
 		minValue: 0,
 	},
+	placeholder: '0',
 	default: undefined,
 	description: 'The number of items to skip before starting to collect the result set',
 	routing: {
