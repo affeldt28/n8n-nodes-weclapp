@@ -1,7 +1,7 @@
 import { type INodeProperties, updateDisplayOptions } from 'n8n-workflow';
-import { filterQueryParameter } from '../shared/QueryParameter';
+import { filterQueryParameters } from '../shared/QueryParameter';
 
-const properties: INodeProperties[] = [filterQueryParameter];
+const properties: INodeProperties[] = [...filterQueryParameters];
 
 const displayOptions = {
 	show: {
