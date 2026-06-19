@@ -4,12 +4,7 @@
 	"description": "n8n node for Weclapp",
 	"license": "MIT",
 	"homepage": "https://github.com/affeldt28/n8n-nodes-weclapp",
-	"keywords": [
-		"n8n-community-node-package",
-		"weclapp",
-		"crm",
-		"erp"
-	],
+	"keywords": ["n8n-community-node-package", "weclapp", "crm", "erp"],
 	"author": {
 		"name": "Marvin Affeldt",
 		"email": "code@affeldt.dev"
@@ -22,14 +17,14 @@
 		"build": "n8n-node build",
 		"build:watch": "tsc --watch",
 		"dev": "n8n-node dev",
-		"lint": "n8n-node lint",
-		"lint:fix": "n8n-node lint --fix",
+		"format": "biome format --write ",
+		"lint": "biome check",
+		"lint:fix": "biome check --write",
+		"n8n-lint": "n8n-node lint",
 		"release": "n8n-node release",
 		"prepublishOnly": "n8n-node prerelease"
 	},
-	"files": [
-		"dist"
-	],
+	"files": ["dist"],
 	"n8n": {
 		"n8nNodesApiVersion": 1,
 		"strict": true,
@@ -37,10 +32,7 @@
 			"dist/credentials/GithubIssuesApi.credentials.js",
 			"dist/credentials/GithubIssuesOAuth2Api.credentials.js"
 		],
-		"nodes": [
-			"dist/nodes/GithubIssues/GithubIssues.node.js",
-			"dist/nodes/Example/Example.node.js"
-		]
+		"nodes": ["dist/nodes/GithubIssues/GithubIssues.node.js", "dist/nodes/Example/Example.node.js"]
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.5.0",
