@@ -1,8 +1,8 @@
 import type { INodeProperties } from 'n8n-workflow';
 import { repoNameSelect, repoOwnerSelect } from '../../shared/descriptions';
-import { issueGetManyDescription } from './getAll';
-import { issueGetDescription } from './get';
 import { issueCreateDescription } from './create';
+import { issueGetDescription } from './get';
+import { issueGetManyDescription } from './getAll';
 
 const showOnlyForIssues = {
 	resource: ['issue'],

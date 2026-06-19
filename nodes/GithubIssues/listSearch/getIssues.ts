@@ -1,7 +1,7 @@
 import type {
 	ILoadOptionsFunctions,
-	INodeListSearchResult,
 	INodeListSearchItems,
+	INodeListSearchResult,
 } from 'n8n-workflow';
 import { githubApiRequest } from '../shared/transport';
 

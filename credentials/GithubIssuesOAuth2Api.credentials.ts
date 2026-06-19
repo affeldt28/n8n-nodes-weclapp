@@ -1,4 +1,4 @@
-import type { Icon, ICredentialType, INodeProperties } from 'n8n-workflow';
+import type { ICredentialType, Icon, INodeProperties } from 'n8n-workflow';
 
 export class GithubIssuesOAuth2Api implements ICredentialType {
 	name = 'githubIssuesOAuth2Api';

@@ -1,11 +1,11 @@
 import type {
-	IHookFunctions,
+	IDataObject,
 	IExecuteFunctions,
 	IExecuteSingleFunctions,
-	ILoadOptionsFunctions,
+	IHookFunctions,
 	IHttpRequestMethods,
-	IDataObject,
 	IHttpRequestOptions,
+	ILoadOptionsFunctions,
 } from 'n8n-workflow';
 
 export async function githubApiRequest(
