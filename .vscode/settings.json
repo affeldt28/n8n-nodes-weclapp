@@ -2,5 +2,11 @@
 	"editor.codeActionsOnSave": {
 		"source.organizeImports.biome": "explicit",
 		"source.fixAll.biome": "explicit"
-	}
+	},
+
+	"js/ts.referencesCodeLens.enabled": true,
+	"js/ts.referencesCodeLens.showOnAllFunctions": true,
+	"js/ts.preferences.importModuleSpecifier": "non-relative",
+
+	"cSpell.words": ["Weclapp"]
 }
