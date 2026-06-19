@@ -1,9 +1,9 @@
-import { NodeConnectionTypes, type INodeType, type INodeTypeDescription } from 'n8n-workflow';
-import { issueDescription } from './resources/issue';
-import { issueCommentDescription } from './resources/issueComment';
+import { type INodeType, type INodeTypeDescription, NodeConnectionTypes } from 'n8n-workflow';
+import { getIssues } from './listSearch/getIssues';
 import { getRepositories } from './listSearch/getRepositories';
 import { getUsers } from './listSearch/getUsers';
-import { getIssues } from './listSearch/getIssues';
+import { issueDescription } from './resources/issue';
+import { issueCommentDescription } from './resources/issueComment';
 
 export class GithubIssues implements INodeType {
 	description: INodeTypeDescription = {
