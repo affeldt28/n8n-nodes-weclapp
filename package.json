@@ -1,19 +1,22 @@
 {
-	"name": "n8n-nodes-<...>",
+	"name": "n8n-nodes-weclapp",
 	"version": "0.1.0",
-	"description": "",
+	"description": "n8n node for Weclapp",
 	"license": "MIT",
-	"homepage": "",
+	"homepage": "https://github.com/affeldt28/n8n-nodes-weclapp",
 	"keywords": [
-		"n8n-community-node-package"
+		"n8n-community-node-package",
+		"weclapp",
+		"crm",
+		"erp"
 	],
 	"author": {
-		"name": "",
-		"email": ""
+		"name": "Marvin Affeldt",
+		"email": "code@affeldt.dev"
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/<...>/n8n-nodes-<...>.git"
+		"url": "https://github.com/affeldt28/n8n-nodes-weclapp.git"
 	},
 	"scripts": {
 		"build": "n8n-node build",
@@ -40,6 +43,7 @@
 		]
 	},
 	"devDependencies": {
+		"@biomejs/biome": "2.5.0",
 		"@n8n/node-cli": "*",
 		"eslint": "9.39.4",
 		"prettier": "3.8.3",
