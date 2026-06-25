@@ -79,7 +79,7 @@ export const filterQueryParameters: INodeProperties[] = [
 		displayName: 'Filters',
 		name: 'filters',
 		type: 'filter',
-		default: {},
+		default: '',
 		placeholder: 'Add Filter',
 		typeOptions: {
 			filter: {
@@ -101,7 +101,7 @@ export const filterQueryParameters: INodeProperties[] = [
 		displayName: 'Advanced Filters',
 		name: 'advancedFilters',
 		type: 'fixedCollection',
-		default: {},
+		default: '',
 		placeholder: 'Add Filter',
 		typeOptions: {
 			multipleValues: true,
@@ -239,11 +239,22 @@ function getBasicFilterValue(condition: FilterConditionValue): string {
 	return String(condition.rightValue ?? '');
 }
 
+function shouldSkipBasicFilter(condition: FilterConditionValue): boolean {
+	const isPropertyEmpty = String(condition.leftValue ?? '').trim() === '';
+	const isValueEmpty = String(condition.rightValue ?? '').trim() === '';
+
+	if (isPropertyEmpty && isValueEmpty) return true;
+
+	return false;
+}
+
 function buildBasicFilterQuery(filters: FilterValue): IDataObject {
 	const query: Record<string, string | string[]> = {};
 	const combinator = filters.combinator ?? 'and';
 
 	for (const condition of filters.conditions ?? []) {
+		if (shouldSkipBasicFilter(condition)) continue;
+
 		addQueryValue(query, getBasicFilterKey(condition, combinator), getBasicFilterValue(condition));
 	}
 
@@ -311,6 +322,10 @@ async function addFilterQuery(
 		} else {
 			const filters = this.getNodeParameter('filters', {}) as FilterValue;
 			query = buildBasicFilterQuery(filters);
+		}
+
+		if (Object.keys(query).length === 0) {
+			return requestOptions;
 		}
 
 		requestOptions.qs = {

@@ -9,7 +9,7 @@ export const sortQueryParameter: INodeProperties = {
 	displayName: 'Sort',
 	name: 'sort',
 	type: 'fixedCollection',
-	default: {},
+	default: '',
 	placeholder: 'Add Sort',
 	typeOptions: {
 		multipleValues: true,

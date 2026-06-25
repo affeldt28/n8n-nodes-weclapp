@@ -9,7 +9,7 @@ export const propertiesQueryParameter: INodeProperties = {
 	displayName: 'Properties',
 	name: 'properties',
 	type: 'fixedCollection',
-	default: {},
+	default: '',
 	placeholder: 'Add Property',
 	typeOptions: {
 		multipleValues: true,

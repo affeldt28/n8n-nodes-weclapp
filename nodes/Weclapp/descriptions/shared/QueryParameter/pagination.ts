@@ -8,7 +8,7 @@ export const pageQueryParameter: INodeProperties = {
 		minValue: 1,
 	},
 	placeholder: '1',
-	default: undefined,
+	default: 1,
 	description: 'The page number to retrieve',
 	routing: {
 		send: {
@@ -27,7 +27,7 @@ export const pageSizeQueryParameter: INodeProperties = {
 		maxValue: 1000,
 	},
 	placeholder: '100',
-	default: undefined,
+	default: 100,
 	description: 'The number of items to retrieve per page',
 	routing: {
 		send: {
@@ -45,7 +45,7 @@ export const offsetQueryParameter: INodeProperties = {
 		minValue: 0,
 	},
 	placeholder: '0',
-	default: undefined,
+	default: 0,
 	description: 'The number of items to skip before starting to collect the result set',
 	routing: {
 		send: {
