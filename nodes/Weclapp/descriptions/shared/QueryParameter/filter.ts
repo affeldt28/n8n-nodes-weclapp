@@ -143,7 +143,8 @@ export const filterQueryParameters: INodeProperties[] = [
 								operator: ['null', 'notnull'],
 							},
 						},
-						description: 'For In and Not In, enter a JSON array such as ["1006","1007"]',
+						description:
+							'For In and Not In, enter a JSON array such as ["1006","1007"]',
 					},
 					{
 						displayName: 'Combine With',
@@ -255,7 +256,11 @@ function buildBasicFilterQuery(filters: FilterValue): IDataObject {
 	for (const condition of filters.conditions ?? []) {
 		if (shouldSkipBasicFilter(condition)) continue;
 
-		addQueryValue(query, getBasicFilterKey(condition, combinator), getBasicFilterValue(condition));
+		addQueryValue(
+			query,
+			getBasicFilterKey(condition, combinator),
+			getBasicFilterValue(condition),
+		);
 	}
 
 	return query;

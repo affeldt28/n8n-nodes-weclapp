@@ -34,7 +34,8 @@ export class WeclappApi implements ICredentialType {
 			typeOptions: { password: true },
 			required: true,
 			default: '',
-			description: 'The token is configurable in your weclapp account under My settings &gt; API.',
+			description:
+				'The token is configurable in your weclapp account under My settings &gt; API.',
 			hint: 'The token is configurable in your weclapp account under <code>My settings &gt; API.</code>',
 		},
 	];
