@@ -32,7 +32,7 @@
 		"nodes": ["dist/nodes/Weclapp/Weclapp.node.js"]
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.5.0",
+		"@biomejs/biome": "2.5.1",
 		"@n8n/node-cli": "*",
 		"release-it": "20.2.0",
 		"typescript": "6.0.3"
