@@ -1,5 +1,5 @@
 import { type INodeType, type INodeTypeDescription, NodeConnectionTypes } from 'n8n-workflow';
-import { user } from './descriptions';
+import { article, user } from './descriptions';
 
 export class Weclapp implements INodeType {
 	description: INodeTypeDescription = {
@@ -36,11 +36,16 @@ export class Weclapp implements INodeType {
 						name: 'User',
 						value: 'user',
 					},
+					{
+						name: 'Article',
+						value: 'article',
+					},
 				],
 				default: 'user',
 			},
 
 			...user.description,
+			...article.description,
 		],
 	};
 	methods = {};

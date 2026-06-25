@@ -1,3 +1,4 @@
+export * from './additionalProperties';
 export * from './dryRun';
 export * from './filter';
 export * from './includeReferencedEntities';
