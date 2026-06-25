@@ -3,33 +3,23 @@
 	"vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
 	"files": { "ignoreUnknown": false },
 	"formatter": {
-		"enabled": true,
-		"formatWithErrors": false,
-		"indentStyle": "tab",
-		"indentWidth": 2,
-		"lineEnding": "lf",
-		"lineWidth": 100,
-		"attributePosition": "auto",
-		"bracketSameLine": false,
-		"bracketSpacing": true,
-		"expand": "auto",
-		"useEditorconfig": true
+		"lineWidth": 100
 	},
-	"linter": { "enabled": true, "rules": { "preset": "none" }, "includes": ["**", "!dist"] },
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"preset": "none"
+		},
+		"includes": [
+			"**",
+			"!dist"
+		]
+	},
 	"javascript": {
 		"formatter": {
-			"jsxQuoteStyle": "double",
-			"quoteProperties": "asNeeded",
-			"trailingCommas": "all",
-			"semicolons": "always",
-			"arrowParentheses": "always",
-			"bracketSameLine": false,
-			"quoteStyle": "single",
-			"attributePosition": "auto",
-			"bracketSpacing": true
+			"quoteStyle": "single"
 		}
 	},
-	"html": { "formatter": { "indentScriptAndStyle": false, "selfCloseVoidElements": "always" } },
 	"overrides": [
 		{
 			"includes": ["**/*.ts"],
