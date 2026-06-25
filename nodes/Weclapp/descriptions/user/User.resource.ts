@@ -1,5 +1,6 @@
 import type { INodeProperties } from 'n8n-workflow';
 import * as count from './count.operation';
+import * as create from './create.operation';
 import * as query from './query.operation';
 
 export const description: INodeProperties[] = [
@@ -27,6 +28,22 @@ export const description: INodeProperties[] = [
 				action: 'Count Users',
 			},
 			{
+				name: 'Create',
+				value: 'create',
+				description: 'Create a user',
+				routing: {
+					request: {
+						method: 'POST',
+						url: '/user',
+						headers: {
+							'Content-Type': 'application/json',
+						},
+						json: true,
+					},
+				},
+				action: 'Create a user',
+			},
+			{
 				name: 'Query',
 				value: 'query',
 				description: 'Query Users',
@@ -42,5 +59,6 @@ export const description: INodeProperties[] = [
 		default: 'count',
 	},
 	...count.description,
+	...create.description,
 	...query.description,
 ];
