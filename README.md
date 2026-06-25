@@ -58,7 +58,8 @@ This node currently supports the following weclapp resources and operations:
 
 ### Recurring Invoice
 
-> ![warning] This is an unofficial implementation of the weclapp API. The following operations are implemented. But it's not officially documented in the weclapp API documentation. Use at your own risk.
+> [!CAUTION]
+> This is an unofficial implementation of the weclapp API. The following operations are implemented. But it's not officially documented in the weclapp API documentation. Use at your own risk.
 
 | Operation                | API                                                                                     | Implemented |
 | ------------------------ | --------------------------------------------------------------------------------------- | ----------- |
