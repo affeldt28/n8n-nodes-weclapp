@@ -9,7 +9,17 @@
 		"ignoreUnknown": false
 	},
 	"formatter": {
-		"lineWidth": 100
+		"enabled": true,
+		"formatWithErrors": false,
+		"indentStyle": "tab",
+		"indentWidth": 4,
+		"lineEnding": "lf",
+		"lineWidth": 100,
+		"attributePosition": "auto",
+		"bracketSameLine": false,
+		"bracketSpacing": true,
+		"expand": "auto",
+		"useEditorconfig": true
 	},
 	"linter": {
 		"enabled": true,
