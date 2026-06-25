@@ -1,7 +1,13 @@
 {
 	"$schema": "https://biomejs.dev/schemas/2.5.0/schema.json",
-	"vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
-	"files": { "ignoreUnknown": false },
+	"vcs": {
+		"enabled": true,
+		"clientKind": "git",
+		"useIgnoreFile": true
+	},
+	"files": {
+		"ignoreUnknown": false
+	},
 	"formatter": {
 		"lineWidth": 100
 	},
@@ -22,7 +28,9 @@
 	},
 	"overrides": [
 		{
-			"includes": ["**/*.ts"],
+			"includes": [
+				"**/*.ts"
+			],
 			"linter": {
 				"rules": {
 					"complexity": {
@@ -89,12 +97,23 @@
 				}
 			}
 		},
-		{ "includes": ["**/*.ts"], "javascript": { "globals": [] } },
 		{
-			"includes": ["**/*.ts"],
+			"includes": [
+				"**/*.ts"
+			],
+			"javascript": {
+				"globals": []
+			}
+		},
+		{
+			"includes": [
+				"**/*.ts"
+			],
 			"linter": {
 				"rules": {
-					"complexity": { "noArguments": "error" },
+					"complexity": {
+						"noArguments": "error"
+					},
 					"correctness": {
 						"noConstAssign": "off",
 						"noGlobalObjectCalls": "off",
@@ -105,7 +124,10 @@
 						"noUnreachable": "off",
 						"noUnreachableSuper": "off"
 					},
-					"style": { "useConst": "error", "useSpreadOverApply": "error" },
+					"style": {
+						"useConst": "error",
+						"useSpreadOverApply": "error"
+					},
 					"suspicious": {
 						"noClassAssign": "off",
 						"noDuplicateClassMembers": "off",
@@ -123,11 +145,17 @@
 			}
 		},
 		{
-			"includes": ["**/*.ts"],
+			"includes": [
+				"**/*.ts"
+			],
 			"linter": {
 				"rules": {
-					"complexity": { "noUselessTypeConstraint": "error" },
-					"correctness": { "noUnusedVariables": "error" },
+					"complexity": {
+						"noUselessTypeConstraint": "error"
+					},
+					"correctness": {
+						"noUnusedVariables": "error"
+					},
 					"style": {
 						"noCommonJs": "error",
 						"noNamespace": "error",
@@ -147,21 +175,81 @@
 				}
 			}
 		},
-		{ "includes": ["**/*.ts", "!eslint.config.{js,mjs,ts,mts}"], "linter": { "rules": {} } },
-		{ "includes": ["**/*.ts"], "linter": { "rules": {} } },
 		{
-			"includes": ["**/*.ts"],
+			"includes": [
+				"**/*.ts",
+				"!eslint.config.{js,mjs,ts,mts}"
+			],
+			"linter": {
+				"rules": {}
+			}
+		},
+		{
+			"includes": [
+				"**/*.ts"
+			],
+			"linter": {
+				"rules": {}
+			}
+		},
+		{
+			"includes": [
+				"**/*.ts"
+			],
 			"linter": {
 				"rules": {
-					"style": { "useSpreadOverApply": "off" },
-					"suspicious": { "noConsole": "error" }
+					"style": {
+						"useSpreadOverApply": "off"
+					},
+					"suspicious": {
+						"noConsole": "error"
+					}
 				}
 			}
 		},
-		{ "includes": ["package.json", "!eslint.config.{js,mjs,ts,mts}"], "linter": { "rules": {} } },
-		{ "includes": ["package.json"], "javascript": { "globals": [] }, "linter": { "rules": {} } },
-		{ "includes": ["credentials/**/*.ts"], "linter": { "rules": {} } },
-		{ "includes": ["nodes/**/*.ts"], "linter": { "rules": {} } }
+		{
+			"includes": [
+				"package.json",
+				"!eslint.config.{js,mjs,ts,mts}"
+			],
+			"linter": {
+				"rules": {}
+			}
+		},
+		{
+			"includes": [
+				"package.json"
+			],
+			"javascript": {
+				"globals": []
+			},
+			"linter": {
+				"rules": {}
+			}
+		},
+		{
+			"includes": [
+				"credentials/**/*.ts"
+			],
+			"linter": {
+				"rules": {}
+			}
+		},
+		{
+			"includes": [
+				"nodes/**/*.ts"
+			],
+			"linter": {
+				"rules": {}
+			}
+		}
 	],
-	"assist": { "enabled": true, "actions": { "source": { "organizeImports": "on" } } }
+	"assist": {
+		"enabled": true,
+		"actions": {
+			"source": {
+				"organizeImports": "on"
+			}
+		}
+	}
 }
