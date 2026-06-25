@@ -56,6 +56,15 @@ This node currently supports the following weclapp resources and operations:
 | User image            | [GET /user/id/{id}/userImage](https://www.weclapp.com/api/#get-/user/id/-id-/userImage)                   | 🚫           |
 | User image thumbnail  | [GET /user/id/{id}/userImageThumbnail](https://www.weclapp.com/api/#get-/user/id/-id-/userImageThumbnail) | 🚫           |
 
+### Recurring Invoice
+
+> ![warning] This is an unofficial implementation of the weclapp API. The following operations are implemented. But it's not officially documented in the weclapp API documentation. Use at your own risk.
+
+| Operation                | API                                                                                     | Implemented |
+| ------------------------ | --------------------------------------------------------------------------------------- | ----------- |
+| Query recurring invoices | [GET /recurringInvoice](https://www.weclapp.com/api/#get-/recurringInvoice)             | ✅           |
+| Count recurring invoices | [GET /recurringInvoice/count](https://www.weclapp.com/api/#get-/recurringInvoice/count) | ✅           |
+
 ## Credentials
 
 This node uses the **Weclapp API** credential.
