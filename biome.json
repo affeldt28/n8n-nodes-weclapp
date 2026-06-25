@@ -6,7 +6,8 @@
 		"useIgnoreFile": true
 	},
 	"files": {
-		"ignoreUnknown": false
+		"ignoreUnknown": false,
+		"includes": ["**", "!dist", "!**/*.svg"]
 	},
 	"formatter": {
 		"enabled": true,
@@ -98,11 +99,7 @@
 				"useNamespaceKeyword": "error",
 				"noConsole": "error"
 			}
-		},
-		"includes": [
-			"**",
-			"!dist"
-		]
+		}
 	},
 	"javascript": {
 		"formatter": {
