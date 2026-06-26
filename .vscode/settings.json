@@ -8,5 +8,7 @@
 	"js/ts.referencesCodeLens.showOnAllFunctions": true,
 	"js/ts.preferences.importModuleSpecifier": "non-relative",
 
-	"cSpell.words": ["Weclapp"]
+	"cSpell.words": [
+		"Weclapp"
+	]
 }

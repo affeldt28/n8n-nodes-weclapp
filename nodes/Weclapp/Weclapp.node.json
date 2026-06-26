@@ -2,7 +2,11 @@
 	"node": "n8n-nodes-weclapp-weclapp",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
-	"categories": ["Finance & Accounting", "Productivity", "Sales"],
+	"categories": [
+		"Finance & Accounting",
+		"Productivity",
+		"Sales"
+	],
 	"resources": {
 		"credentialDocumentation": [
 			{
