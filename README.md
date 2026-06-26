@@ -44,7 +44,7 @@ This node currently supports the following weclapp resources and operations:
 | Operation                        | API                                                                                                                                                       | Implemented |
 | -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
 | Query party                      | [GET /party](https://www.weclapp.com/api/#get-/party)                                                                                                     | ✅           |
-| Create party                     | [POST /party](https://www.weclapp.com/api/#post-/party)                                                                                                   | 🚫           |
+| Create party                     | [POST /party](https://www.weclapp.com/api/#post-/party)                                                                                                   | ✅           |
 | Count parties                    | [GET /party/count](https://www.weclapp.com/api/#get-/party/count)                                                                                         | ✅           |
 | Query party by id                | [GET /party/id/{id}](https://www.weclapp.com/api/#get-/party/id/-id-)                                                                                     | 🚫           |
 | Update party                     | [PUT /party/id/{id}](https://www.weclapp.com/api/#put-/party/id/-id-)                                                                                     | 🚫           |
