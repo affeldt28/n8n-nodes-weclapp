@@ -1,9 +1,4 @@
-import type {
-	IDataObject,
-	IExecuteSingleFunctions,
-	IHttpRequestOptions,
-	INodeProperties,
-} from 'n8n-workflow';
+import type { INodeProperties } from 'n8n-workflow';
 
 export const propertiesQueryParameter: INodeProperties = {
 	displayName: 'Properties',
@@ -32,29 +27,10 @@ export const propertiesQueryParameter: INodeProperties = {
 		},
 	],
 	routing: {
-		send: {
-			preSend: [addPropertiesQuery],
+		request: {
+			qs: {
+				properties: '={{$parameter.properties.items.map(item => item.property).join(",")}}',
+			},
 		},
 	},
 };
-
-async function addPropertiesQuery(
-	this: IExecuteSingleFunctions,
-	requestOptions: IHttpRequestOptions,
-): Promise<IHttpRequestOptions> {
-	const properties = this.getNodeParameter('properties', {}) as IDataObject;
-	const items = (properties.items ?? []) as Array<{ property?: string }>;
-	const value = items
-		.map(({ property }) => property?.trim())
-		.filter((property): property is string => Boolean(property))
-		.join(',');
-
-	if (value) {
-		requestOptions.qs = {
-			...requestOptions.qs,
-			properties: value,
-		};
-	}
-
-	return requestOptions;
-}
