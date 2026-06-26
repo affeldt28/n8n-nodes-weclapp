@@ -2,22 +2,22 @@ import { INodeProperties } from 'n8n-workflow';
 
 export const paginationQueryParameters: INodeProperties[] = [
 	{
-		displayName: 'Use Pagination',
 		name: 'usePagination',
+		displayName: 'Use Pagination',
+		description: 'Whether to use pagination for the request',
 		type: 'boolean',
 		default: false,
-		description: 'Whether to use pagination for the request',
 	},
 	{
-		displayName: 'Page',
 		name: 'page',
+		displayName: 'Page',
+		description: 'The page number to retrieve',
 		type: 'number',
 		typeOptions: {
 			minValue: 1,
 		},
-		placeholder: '1',
 		default: 1,
-		description: 'The page number to retrieve',
+		placeholder: '1',
 		displayOptions: {
 			show: {
 				usePagination: [true],
@@ -31,16 +31,16 @@ export const paginationQueryParameters: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Page Size',
 		name: 'pageSize',
+		displayName: 'Page Size',
+		description: 'The number of items to retrieve per page',
 		type: 'number',
 		typeOptions: {
 			minValue: 1,
 			maxValue: 1000,
 		},
-		placeholder: '100',
 		default: 100,
-		description: 'The number of items to retrieve per page',
+		placeholder: '100',
 		displayOptions: {
 			show: {
 				usePagination: [true],
@@ -54,15 +54,15 @@ export const paginationQueryParameters: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Offset',
 		name: 'offset',
+		displayName: 'Offset',
+		description: 'The number of items to skip before starting to collect the result set',
 		type: 'number',
 		typeOptions: {
 			minValue: 0,
 		},
-		placeholder: '0',
 		default: 0,
-		description: 'The number of items to skip before starting to collect the result set',
+		placeholder: '0',
 		displayOptions: {
 			show: {
 				usePagination: [true],

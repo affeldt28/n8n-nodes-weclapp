@@ -53,22 +53,22 @@ const advancedOperators = [
 
 export const filterQueryParameters: INodeProperties[] = [
 	{
-		displayName: 'Filter Mode',
 		name: 'filterMode',
+		displayName: 'Filter Mode',
 		type: 'options',
+		default: 'basic',
 		options: [
 			{
 				name: 'Basic',
-				value: 'basic',
 				description: 'Use the standard n8n filter builder',
+				value: 'basic',
 			},
 			{
 				name: 'Advanced',
-				value: 'advanced',
 				description: 'Use all weclapp operators and per-condition combinations',
+				value: 'advanced',
 			},
 		],
-		default: 'basic',
 		routing: {
 			send: {
 				preSend: [addFilterQuery],
@@ -76,11 +76,11 @@ export const filterQueryParameters: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Filters',
 		name: 'filters',
+		displayName: 'Filters',
+		description:
+			'Use the weclapp property name, including nested properties such as customAttribute3387.value, as the left value.',
 		type: 'filter',
-		default: '',
-		placeholder: 'Add Filter',
 		typeOptions: {
 			filter: {
 				version: 3,
@@ -89,18 +89,18 @@ export const filterQueryParameters: INodeProperties[] = [
 				allowedCombinators: ['and', 'or'],
 			},
 		},
+		default: '',
+		placeholder: 'Add Filter',
 		displayOptions: {
 			show: {
 				filterMode: ['basic'],
 			},
 		},
-		description:
-			'Use the weclapp property name, including nested properties such as customAttribute3387.value, as the left value.',
 	},
 	{
+		name: 'advancedFiltersNotice',
 		displayName:
 			'Use weclapp filter syntax for advanced filters. See the <a href="https://www.weclapp.com/api/#overview--filtering" target="_blank">weclapp filtering documentation</a> for supported operators and examples.',
-		name: 'advancedFiltersNotice',
 		type: 'notice',
 		default: '',
 		displayOptions: {
@@ -110,14 +110,14 @@ export const filterQueryParameters: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Advanced Filters',
 		name: 'advancedFilters',
+		displayName: 'Advanced Filters',
 		type: 'fixedCollection',
-		default: '',
-		placeholder: 'Add Filter',
 		typeOptions: {
 			multipleValues: true,
 		},
+		default: '',
+		placeholder: 'Add Filter',
 		displayOptions: {
 			show: {
 				filterMode: ['advanced'],
@@ -125,29 +125,31 @@ export const filterQueryParameters: INodeProperties[] = [
 		},
 		options: [
 			{
-				displayName: 'Condition',
 				name: 'conditions',
+				displayName: 'Condition',
 				values: [
 					{
-						displayName: 'Property',
 						name: 'property',
-						type: 'string',
-						default: '',
-						required: true,
-						placeholder: 'createdDate',
+						displayName: 'Property',
 						description:
 							'weclapp property to filter, including nested properties such as customAttribute3387.value',
+						type: 'string',
+						default: '',
+						placeholder: 'createdDate',
+						required: true,
 					},
 					{
-						displayName: 'Operator',
 						name: 'operator',
+						displayName: 'Operator',
 						type: 'options',
-						options: advancedOperators,
 						default: 'eq',
+						options: advancedOperators,
 					},
 					{
-						displayName: 'Value',
 						name: 'value',
+						displayName: 'Value',
+						description:
+							'For In and Not In, enter a JSON array such as ["1006","1007"]',
 						type: 'string',
 						default: '',
 						displayOptions: {
@@ -155,13 +157,12 @@ export const filterQueryParameters: INodeProperties[] = [
 								operator: ['null', 'notnull'],
 							},
 						},
-						description:
-							'For In and Not In, enter a JSON array such as ["1006","1007"]',
 					},
 					{
-						displayName: 'Combine With',
 						name: 'combination',
+						displayName: 'Combine With',
 						type: 'options',
+						default: 'and',
 						options: [
 							{
 								name: 'AND',
@@ -176,11 +177,12 @@ export const filterQueryParameters: INodeProperties[] = [
 								value: 'orGroup',
 							},
 						],
-						default: 'and',
 					},
 					{
-						displayName: 'OR Group Name',
 						name: 'groupName',
+						displayName: 'OR Group Name',
+						description:
+							'Conditions with the same group name are ORed together; separate groups are ANDed',
 						type: 'string',
 						default: 'Group1',
 						required: true,
@@ -189,8 +191,6 @@ export const filterQueryParameters: INodeProperties[] = [
 								combination: ['orGroup'],
 							},
 						},
-						description:
-							'Conditions with the same group name are ORed together; separate groups are ANDed',
 					},
 				],
 			},

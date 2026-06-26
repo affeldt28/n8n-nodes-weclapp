@@ -5,21 +5,21 @@ import { dryRunQueryParameter } from '../shared/QueryParameter';
 const properties: INodeProperties[] = [
 	dryRunQueryParameter,
 	{
-		displayName: 'Attributes',
 		name: 'attributes',
+		displayName: 'Attributes',
 		type: 'collection',
 		default: {},
 		placeholder: 'Add Attribute',
 		options: [
 			{
-				displayName: 'Birth Date',
 				name: 'birthDate',
+				displayName: 'Birth Date',
+				description: 'Birth date of the user',
 				type: 'dateTime',
-				default: '',
 				typeOptions: {
 					dateOnly: true,
 				},
-				description: 'Birth date of the user',
+				default: '',
 				routing: {
 					send: {
 						type: 'body',
@@ -29,12 +29,12 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'Email',
 				name: 'email',
-				type: 'string',
-				placeholder: 'jane.doe@example.com',
-				default: '',
+				displayName: 'Email',
 				description: 'Email address of the user',
+				type: 'string',
+				default: '',
+				placeholder: 'jane.doe@example.com',
 				routing: {
 					send: {
 						type: 'body',
@@ -43,15 +43,15 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'Fax Number',
 				name: 'faxNumber',
+				displayName: 'Fax Number',
+				description: 'Fax number of the user',
 				type: 'string',
-				default: '',
-				placeholder: '+49 30 12345678',
 				typeOptions: {
 					maxLength: 100,
 				},
-				description: 'Fax number of the user',
+				default: '',
+				placeholder: '+49 30 12345678',
 				routing: {
 					send: {
 						type: 'body',
@@ -60,15 +60,15 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'First Name',
 				name: 'firstName',
+				displayName: 'First Name',
+				description: 'The first name of the user',
 				type: 'string',
-				default: '',
-				placeholder: 'Jane',
 				typeOptions: {
 					maxLength: 50,
 				},
-				description: 'The first name of the user',
+				default: '',
+				placeholder: 'Jane',
 				routing: {
 					send: {
 						type: 'body',
@@ -77,15 +77,15 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'Last Name',
 				name: 'lastName',
+				displayName: 'Last Name',
+				description: 'The last name of the user',
 				type: 'string',
-				default: '',
-				placeholder: 'Doe',
 				typeOptions: {
 					maxLength: 50,
 				},
-				description: 'The last name of the user',
+				default: '',
+				placeholder: 'Doe',
 				routing: {
 					send: {
 						type: 'body',
@@ -94,12 +94,12 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'Licenses',
 				name: 'licenses',
+				displayName: 'Licenses',
+				description: 'Licenses assigned to the user as a JSON array',
 				type: 'json',
 				default: '',
 				placeholder: '["CRM", "ERP"]',
-				description: 'Licenses assigned to the user as a JSON array',
 				routing: {
 					send: {
 						type: 'body',
@@ -108,15 +108,15 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'Mobile Phone Number',
 				name: 'mobilePhoneNumber',
+				displayName: 'Mobile Phone Number',
+				description: 'Mobile phone number of the user',
 				type: 'string',
-				default: '',
-				placeholder: '+49 151 12345678',
 				typeOptions: {
 					maxLength: 100,
 				},
-				description: 'Mobile phone number of the user',
+				default: '',
+				placeholder: '+49 151 12345678',
 				routing: {
 					send: {
 						type: 'body',
@@ -125,15 +125,15 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'Phone Number',
 				name: 'phoneNumber',
+				displayName: 'Phone Number',
+				description: 'Phone number of the user',
 				type: 'string',
-				default: '',
-				placeholder: '+49 30 12345678',
 				typeOptions: {
 					maxLength: 100,
 				},
-				description: 'Phone number of the user',
+				default: '',
+				placeholder: '+49 30 12345678',
 				routing: {
 					send: {
 						type: 'body',
@@ -142,8 +142,9 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'Status',
 				name: 'status',
+				displayName: 'Status',
+				description: 'Status of the user',
 				type: 'options',
 				default: '',
 				options: [
@@ -160,7 +161,6 @@ const properties: INodeProperties[] = [
 						value: 'NOT_ACTIVE',
 					},
 				],
-				description: 'Status of the user',
 				routing: {
 					send: {
 						type: 'body',
@@ -169,15 +169,15 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'Title',
 				name: 'title',
+				displayName: 'Title',
+				description: 'Title of the user',
 				type: 'string',
-				default: '',
-				placeholder: 'Dr.',
 				typeOptions: {
 					maxLength: 1000,
 				},
-				description: 'Title of the user',
+				default: '',
+				placeholder: 'Dr.',
 				routing: {
 					send: {
 						type: 'body',
@@ -186,12 +186,12 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'User Roles',
 				name: 'userRoles',
+				displayName: 'User Roles',
+				description: 'User roles as a JSON array',
 				type: 'json',
 				default: '',
 				placeholder: '[{}]',
-				description: 'User roles as a JSON array',
 				routing: {
 					send: {
 						type: 'body',

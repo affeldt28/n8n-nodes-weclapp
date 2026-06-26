@@ -4,9 +4,9 @@ import * as query from './query.operation';
 
 export const description: INodeProperties[] = [
 	{
+		name: 'recurringInvoiceCaution',
 		displayName:
 			"Caution: This is an unofficial implementation of the weclapp API. The following operations are implemented. But it's not officially documented in the weclapp API documentation. Use at your own risk.",
-		name: 'recurringInvoiceCaution',
 		type: 'notice',
 		default: '',
 		displayOptions: {
@@ -16,9 +16,10 @@ export const description: INodeProperties[] = [
 		},
 	},
 	{
-		displayName: 'Operation',
 		name: 'operation',
+		displayName: 'Operation',
 		type: 'options',
+		default: 'count',
 		noDataExpression: true,
 		displayOptions: {
 			show: {
@@ -27,21 +28,9 @@ export const description: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Count',
-				value: 'count',
-				description: 'Count Recurring Invoices',
-				routing: {
-					request: {
-						method: 'GET',
-						url: '/recurringInvoice/count',
-					},
-				},
-				action: 'Count Recurring Invoices',
-			},
-			{
 				name: 'Query',
-				value: 'query',
 				description: 'Query Recurring Invoices',
+				value: 'query',
 				routing: {
 					request: {
 						method: 'GET',
@@ -50,9 +39,20 @@ export const description: INodeProperties[] = [
 				},
 				action: 'Query Recurring Invoices',
 			},
+			{
+				name: 'Count',
+				description: 'Count Recurring Invoices',
+				value: 'count',
+				routing: {
+					request: {
+						method: 'GET',
+						url: '/recurringInvoice/count',
+					},
+				},
+				action: 'Count Recurring Invoices',
+			},
 		],
-		default: 'count',
 	},
-	...count.description,
 	...query.description,
+	...count.description,
 ];

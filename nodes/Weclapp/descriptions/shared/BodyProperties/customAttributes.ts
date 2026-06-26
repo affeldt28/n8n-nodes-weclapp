@@ -1,30 +1,31 @@
 import { INodeProperties } from 'n8n-workflow';
 
 export const customAttributesBodyProperties: INodeProperties = {
-	displayName: 'Custom Attributes',
 	name: 'customAttributes',
+	displayName: 'Custom Attributes',
 	type: 'fixedCollection',
-	default: {},
-	placeholder: 'Add Custom Attribute',
 	typeOptions: {
 		multipleValues: true,
 	},
+	default: {},
+	placeholder: 'Add Custom Attribute',
 	options: [
 		{
-			displayName: 'Custom Attribute',
 			name: 'customAttribute',
+			displayName: 'Custom Attribute',
 			values: [
 				{
-					displayName: 'Attribute Definition ID',
 					name: 'attributeDefinitionId',
+					displayName: 'Attribute Definition ID',
+					description: 'ID of the custom attribute definition',
 					type: 'string',
 					default: '',
 					placeholder: '12345',
-					description: 'ID of the custom attribute definition',
 				},
 				{
-					displayName: 'Data Type',
 					name: 'dataType',
+					displayName: 'Data Type',
+					description: 'Type of custom attribute value to send',
 					type: 'options',
 					default: 'stringValue',
 					options: [
@@ -61,14 +62,13 @@ export const customAttributesBodyProperties: INodeProperties = {
 							value: 'stringValue',
 						},
 					],
-					description: 'Type of custom attribute value to send',
 				},
 				{
-					displayName: 'Boolean Value',
 					name: 'booleanValue',
+					displayName: 'Boolean Value',
+					description: 'Boolean value of the custom attribute',
 					type: 'boolean',
 					default: false,
-					description: 'Boolean value of the custom attribute',
 					displayOptions: {
 						show: {
 							dataType: ['booleanValue'],
@@ -76,12 +76,12 @@ export const customAttributesBodyProperties: INodeProperties = {
 					},
 				},
 				{
-					displayName: 'Date Value',
 					name: 'dateValue',
+					displayName: 'Date Value',
+					description: 'Date value as an integer timestamp',
 					type: 'number',
 					default: '',
 					placeholder: '1735689600000',
-					description: 'Date value as an integer timestamp',
 					displayOptions: {
 						show: {
 							dataType: ['dateValue'],
@@ -89,12 +89,12 @@ export const customAttributesBodyProperties: INodeProperties = {
 					},
 				},
 				{
-					displayName: 'Entity ID',
 					name: 'entityId',
+					displayName: 'Entity ID',
+					description: 'ID of the referenced entity',
 					type: 'string',
 					default: '',
 					placeholder: '12345',
-					description: 'ID of the referenced entity',
 					displayOptions: {
 						show: {
 							dataType: ['entityId'],
@@ -102,13 +102,13 @@ export const customAttributesBodyProperties: INodeProperties = {
 					},
 				},
 				{
-					displayName: 'Entity References',
 					name: 'entityReferences',
+					displayName: 'Entity References',
+					description:
+						'Entity references as a JSON array of objects containing entityId and entityName',
 					type: 'json',
 					default: '',
 					placeholder: '[{"entityId":"12345","entityName":"Example"}]',
-					description:
-						'Entity references as a JSON array of objects containing entityId and entityName',
 					displayOptions: {
 						show: {
 							dataType: ['entityReferences'],
@@ -116,12 +116,12 @@ export const customAttributesBodyProperties: INodeProperties = {
 					},
 				},
 				{
-					displayName: 'Number Value',
 					name: 'numberValue',
+					displayName: 'Number Value',
+					description: 'Decimal value of the custom attribute',
 					type: 'number',
 					default: '',
 					placeholder: '42.5',
-					description: 'Decimal value of the custom attribute',
 					displayOptions: {
 						show: {
 							dataType: ['numberValue'],
@@ -129,12 +129,12 @@ export const customAttributesBodyProperties: INodeProperties = {
 					},
 				},
 				{
-					displayName: 'Selected Value ID',
 					name: 'selectedValueId',
+					displayName: 'Selected Value ID',
+					description: 'ID of the selected custom attribute value',
 					type: 'string',
 					default: '',
 					placeholder: '12345',
-					description: 'ID of the selected custom attribute value',
 					displayOptions: {
 						show: {
 							dataType: ['selectedValueId'],
@@ -142,12 +142,12 @@ export const customAttributesBodyProperties: INodeProperties = {
 					},
 				},
 				{
-					displayName: 'Selected Values',
 					name: 'selectedValues',
+					displayName: 'Selected Values',
+					description: 'Selected values as a JSON array',
 					type: 'json',
 					default: '',
 					placeholder: '[{}]',
-					description: 'Selected values as a JSON array',
 					displayOptions: {
 						show: {
 							dataType: ['selectedValues'],
@@ -155,12 +155,12 @@ export const customAttributesBodyProperties: INodeProperties = {
 					},
 				},
 				{
-					displayName: 'String Value',
 					name: 'stringValue',
+					displayName: 'String Value',
+					description: 'String value of the custom attribute',
 					type: 'string',
 					default: '',
 					placeholder: 'Example value',
-					description: 'String value of the custom attribute',
 					displayOptions: {
 						show: {
 							dataType: ['stringValue'],

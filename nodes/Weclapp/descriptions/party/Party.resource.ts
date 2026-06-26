@@ -4,9 +4,10 @@ import * as query from './query.operation';
 
 export const description: INodeProperties[] = [
 	{
-		displayName: 'Operation',
 		name: 'operation',
+		displayName: 'Operation',
 		type: 'options',
+		default: 'count',
 		noDataExpression: true,
 		displayOptions: {
 			show: {
@@ -15,21 +16,9 @@ export const description: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Count',
-				value: 'count',
-				description: 'Count Parties',
-				routing: {
-					request: {
-						method: 'GET',
-						url: '/party/count',
-					},
-				},
-				action: 'Count Parties',
-			},
-			{
 				name: 'Query',
-				value: 'query',
 				description: 'Query Parties',
+				value: 'query',
 				routing: {
 					request: {
 						method: 'GET',
@@ -38,9 +27,20 @@ export const description: INodeProperties[] = [
 				},
 				action: 'Query Parties',
 			},
+			{
+				name: 'Count',
+				description: 'Count Parties',
+				value: 'count',
+				routing: {
+					request: {
+						method: 'GET',
+						url: '/party/count',
+					},
+				},
+				action: 'Count Parties',
+			},
 		],
-		default: 'count',
 	},
-	...count.description,
 	...query.description,
+	...count.description,
 ];

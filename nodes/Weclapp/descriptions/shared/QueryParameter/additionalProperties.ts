@@ -9,28 +9,28 @@ import type {
  * @deprecated ⚠️ UNTESTED: This function is not tested and may not work as expected. Use with caution.
  */
 export const additionalPropertiesQueryParameter: INodeProperties = {
-	displayName: 'Additional Properties',
 	name: 'additionalProperties',
+	displayName: 'Additional Properties',
 	type: 'fixedCollection',
-	default: '',
-	placeholder: 'Add Additional Property',
 	typeOptions: {
 		multipleValues: true,
 	},
+	default: '',
+	placeholder: 'Add Additional Property',
 	options: [
 		{
-			displayName: 'Additional Property',
 			name: 'items',
+			displayName: 'Additional Property',
 			values: [
 				{
-					displayName: 'Property Name',
 					name: 'property',
-					type: 'string',
-					default: '',
-					required: true,
-					placeholder: 'currentSalesPrice',
+					displayName: 'Property Name',
 					description:
 						'Additional calculated or complex property to include in the response',
+					type: 'string',
+					default: '',
+					placeholder: 'currentSalesPrice',
+					required: true,
 				},
 			],
 		},

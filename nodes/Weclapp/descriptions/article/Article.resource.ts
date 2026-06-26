@@ -5,9 +5,10 @@ import * as queryId from './queryId.operation';
 
 export const description: INodeProperties[] = [
 	{
-		displayName: 'Operation',
 		name: 'operation',
+		displayName: 'Operation',
 		type: 'options',
+		default: 'count',
 		noDataExpression: true,
 		displayOptions: {
 			show: {
@@ -16,21 +17,9 @@ export const description: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Count',
-				value: 'count',
-				description: 'Count Articles',
-				routing: {
-					request: {
-						method: 'GET',
-						url: '/article/count',
-					},
-				},
-				action: 'Count Articles',
-			},
-			{
 				name: 'Query',
-				value: 'query',
 				description: 'Query Articles',
+				value: 'query',
 				routing: {
 					request: {
 						method: 'GET',
@@ -40,9 +29,21 @@ export const description: INodeProperties[] = [
 				action: 'Query Articles',
 			},
 			{
+				name: 'Count',
+				description: 'Count Articles',
+				value: 'count',
+				routing: {
+					request: {
+						method: 'GET',
+						url: '/article/count',
+					},
+				},
+				action: 'Count Articles',
+			},
+			{
 				name: 'Query by ID',
-				value: 'queryId',
 				description: 'Query Article by ID',
+				value: 'queryId',
 				routing: {
 					request: {
 						method: 'GET',
@@ -52,9 +53,8 @@ export const description: INodeProperties[] = [
 				action: 'Query Article by ID',
 			},
 		],
-		default: 'count',
 	},
-	...count.description,
 	...query.description,
+	...count.description,
 	...queryId.description,
 ];

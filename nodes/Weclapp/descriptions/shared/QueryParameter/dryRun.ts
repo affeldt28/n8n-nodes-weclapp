@@ -1,11 +1,11 @@
 import type { INodeProperties } from 'n8n-workflow';
 
 export const dryRunQueryParameter: INodeProperties = {
-	displayName: 'Dry Run',
 	name: 'dryRun',
+	displayName: 'Dry Run',
+	description: 'Whether to perform a dry run',
 	type: 'boolean',
 	default: false,
-	description: 'Whether to perform a dry run',
 	routing: {
 		send: {
 			type: 'query',

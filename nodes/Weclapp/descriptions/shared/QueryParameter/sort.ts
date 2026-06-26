@@ -1,31 +1,32 @@
 import { INodeProperties } from 'n8n-workflow';
 
 export const sortQueryParameter: INodeProperties = {
-	displayName: 'Sort',
 	name: 'sort',
+	displayName: 'Sort',
 	type: 'fixedCollection',
-	default: '',
-	placeholder: 'Add Sort',
 	typeOptions: {
 		multipleValues: true,
 	},
+	default: '',
+	placeholder: 'Add Sort',
 	options: [
 		{
-			displayName: 'Sort',
 			name: 'criteria',
+			displayName: 'Sort',
 			values: [
 				{
-					displayName: 'Property',
 					name: 'property',
+					displayName: 'Property',
 					type: 'string',
 					default: '',
-					required: true,
 					placeholder: 'lastModifiedDate',
+					required: true,
 				},
 				{
-					displayName: 'Direction',
 					name: 'direction',
+					displayName: 'Direction',
 					type: 'options',
+					default: 'asc',
 					options: [
 						{
 							name: 'Ascending',
@@ -36,7 +37,6 @@ export const sortQueryParameter: INodeProperties = {
 							value: 'desc',
 						},
 					],
-					default: 'asc',
 				},
 			],
 		},

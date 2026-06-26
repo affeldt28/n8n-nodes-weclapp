@@ -1,11 +1,11 @@
 import type { INodeProperties } from 'n8n-workflow';
 
 export const serializeNullsQueryParameter: INodeProperties = {
-	displayName: 'Serialize Nulls',
 	name: 'serializeNulls',
+	displayName: 'Serialize Nulls',
+	description: 'Whether to include fields with null values in the response',
 	type: 'boolean',
 	default: false,
-	description: 'Whether to include fields with null values in the response',
 	routing: {
 		send: {
 			type: 'query',

@@ -5,9 +5,10 @@ import * as query from './query.operation';
 
 export const description: INodeProperties[] = [
 	{
-		displayName: 'Operation',
 		name: 'operation',
+		displayName: 'Operation',
 		type: 'options',
+		default: 'count',
 		noDataExpression: true,
 		displayOptions: {
 			show: {
@@ -17,8 +18,8 @@ export const description: INodeProperties[] = [
 		options: [
 			{
 				name: 'Count',
-				value: 'count',
 				description: 'Count Users',
+				value: 'count',
 				routing: {
 					request: {
 						method: 'GET',
@@ -29,8 +30,8 @@ export const description: INodeProperties[] = [
 			},
 			{
 				name: 'Create',
-				value: 'create',
 				description: 'Create a user',
+				value: 'create',
 				routing: {
 					request: {
 						method: 'POST',
@@ -45,8 +46,8 @@ export const description: INodeProperties[] = [
 			},
 			{
 				name: 'Query',
-				value: 'query',
 				description: 'Query Users',
+				value: 'query',
 				routing: {
 					request: {
 						method: 'GET',
@@ -56,7 +57,6 @@ export const description: INodeProperties[] = [
 				action: 'Query Users',
 			},
 		],
-		default: 'count',
 	},
 	...count.description,
 	...create.description,
