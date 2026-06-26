@@ -39,6 +39,32 @@ This node currently supports the following weclapp resources and operations:
 | Packaging unit structure    | [GET /article/id/{id}/packagingUnitStructure](https://www.weclapp.com/api/#get-/article/id/-id-/packagingUnitStructure)     | 🚫           |
 | Upload article image        | [POST /article/id/{id}/uploadArticleImage](https://www.weclapp.com/api/#post-/article/id/-id-/uploadArticleImage)           | 🚫           |
 
+### Party
+
+| Operation                        | API                                                                                                                                                       | Implemented |
+| -------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| Query party                      | [GET /party](https://www.weclapp.com/api/#get-/party)                                                                                                     | ✅           |
+| Create party                     | [POST /party](https://www.weclapp.com/api/#post-/party)                                                                                                   | 🚫           |
+| Count parties                    | [GET /party/count](https://www.weclapp.com/api/#get-/party/count)                                                                                         | ✅           |
+| Query party by id                | [GET /party/id/{id}](https://www.weclapp.com/api/#get-/party/id/-id-)                                                                                     | 🚫           |
+| Update party                     | [PUT /party/id/{id}](https://www.weclapp.com/api/#put-/party/id/-id-)                                                                                     | 🚫           |
+| Delete party                     | [DELETE /party/id/{id}](https://www.weclapp.com/api/#delete-/party/id/-id-)                                                                               | 🚫           |
+| Create public page               | [POST /party/id/{id}/createPublicPage](https://www.weclapp.com/api/#post-/party/id/-id-/createPublicPage)                                                 | 🚫           |
+| Download image                   | [GET /party/id/{id}/downloadImage](https://www.weclapp.com/api/#get-/party/id/-id-/downloadImage)                                                         | 🚫           |
+| Transfer address to open records | [POST /party/id/{id}/startTransferAddressesToOpenRecords](https://www.weclapp.com/api/#post-/party/id/-id-/startTransferAddressesToOpenRecords)           | 🚫           |
+| Transfer email to open records   | [POST /party/id/{id}/startTransferEmailAddressesToOpenRecords](https://www.weclapp.com/api/#post-/party/id/-id-/startTransferEmailAddressesToOpenRecords) | 🚫           |
+| Upload image                     | [POST /party/id/{id}/uploadImage](https://www.weclapp.com/api/#post-/party/id/-id-/uploadImage)                                                           | 🚫           |
+
+### Recurring Invoice
+
+> [!CAUTION]
+> This is an unofficial implementation of the weclapp API. The following operations are implemented. But it's not officially documented in the weclapp API documentation. Use at your own risk.
+
+| Operation                | API                                                                                     | Implemented |
+| ------------------------ | --------------------------------------------------------------------------------------- | ----------- |
+| Query recurring invoices | [GET /recurringInvoice](https://www.weclapp.com/api/#get-/recurringInvoice)             | ✅           |
+| Count recurring invoices | [GET /recurringInvoice/count](https://www.weclapp.com/api/#get-/recurringInvoice/count) | ✅           |
+
 ### User
 
 | Operation             | API                                                                                                       | Implemented |
@@ -55,16 +81,6 @@ This node currently supports the following weclapp resources and operations:
 | Soft delete user      | [POST /user/id/{id}/softDelete](https://www.weclapp.com/api/#post-/user/id/-id-/softDelete)               | 🚫           |
 | User image            | [GET /user/id/{id}/userImage](https://www.weclapp.com/api/#get-/user/id/-id-/userImage)                   | 🚫           |
 | User image thumbnail  | [GET /user/id/{id}/userImageThumbnail](https://www.weclapp.com/api/#get-/user/id/-id-/userImageThumbnail) | 🚫           |
-
-### Recurring Invoice
-
-> [!CAUTION]
-> This is an unofficial implementation of the weclapp API. The following operations are implemented. But it's not officially documented in the weclapp API documentation. Use at your own risk.
-
-| Operation                | API                                                                                     | Implemented |
-| ------------------------ | --------------------------------------------------------------------------------------- | ----------- |
-| Query recurring invoices | [GET /recurringInvoice](https://www.weclapp.com/api/#get-/recurringInvoice)             | ✅           |
-| Count recurring invoices | [GET /recurringInvoice/count](https://www.weclapp.com/api/#get-/recurringInvoice/count) | ✅           |
 
 ## Credentials
 
