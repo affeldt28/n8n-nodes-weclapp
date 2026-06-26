@@ -7,7 +7,11 @@
 	},
 	"files": {
 		"ignoreUnknown": false,
-		"includes": ["**", "!dist", "!**/*.svg"]
+		"includes": [
+			"**",
+			"!dist",
+			"!**/*.svg"
+		]
 	},
 	"formatter": {
 		"enabled": true,
@@ -104,6 +108,11 @@
 	"javascript": {
 		"formatter": {
 			"quoteStyle": "single"
+		}
+	},
+	"json": {
+		"formatter": {
+			"expand": "always"
 		}
 	},
 	"assist": {
