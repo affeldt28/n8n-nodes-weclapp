@@ -39,33 +39,58 @@
 # Both options work with --provenance. Provenance is signed by GitHub's OIDC
 # infrastructure regardless of how npm authentication is handled.
 #
-# ─── TAG CONVENTION ────────────────────────────────────────────────────────────
-#
-# This workflow triggers on tags matching "*.*.*" (e.g. 0.2.0).
-# If you prefer tags with a "v" prefix (e.g. v0.2.0), change the filter to:
-#   tags: ['v*.*.*']
-#
-# ─── RELEASE PROCESS ───────────────────────────────────────────────────────────
-#
-# Run the following command locally to start an interactive release:
-#
-#   npm run release
-#
-# This will lint, build, prompt for a version bump, update the changelog,
-# commit, tag, and push — which triggers this workflow to publish to npm.
 
-name: Publish
+name: 📋 Release & Publish
 
 on:
+  workflow_dispatch:
   push:
     tags:
-      # Matches 0.1.0, 1.2.3, 2.0.0-rc.1, etc.
-      # See "TAG CONVENTION" above if you prefer tags with a "v" prefix.
-      - '*.*.*'
+      - '[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
+  release:
+    name: 📋 Release
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v7.0.0
+
+      - name: 🏷️ Set version
+        id: version
+        # get version from ref if trigger by tag or from package.json
+        run: |
+          if [[ ${{ github.ref }} == refs/tags/* ]]; then
+            version=${{ github.ref_name }}
+          else
+            version=$(jq -r .version package.json)
+          fi
+          echo "version=${version}" >> $GITHUB_OUTPUT
+
+      - name: 📝 Update CHANGELOG
+        id: changelog
+        uses: requarks/changelog-action@v1.10.3
+        with:
+          token: ${{ github.token }}
+          tag: ${{ steps.version.outputs.version }}
+          excludeTypes: build,docs,other,style
+          writeToFile: false
+
+      - name: 📦 Create Release
+        uses: ncipollo/release-action@v1.21.0
+        with:
+          allowUpdates: true
+          draft: false
+          tag: ${{ steps.version.outputs.version }}
+          name: ${{ steps.version.outputs.version }}
+          body: ${{ steps.changelog.outputs.changes }}
+
   publish:
-    name: Publish to npm
+    name: 📋 Publish to npm
     runs-on: ubuntu-latest
 
     permissions:
@@ -75,18 +100,24 @@ jobs:
       contents: read
 
     steps:
-      - uses: actions/checkout@v7
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v7.0.0
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v6
+      - name: ⚙️ Set up Node.js
+        uses: actions/setup-node@v6.4.0
         with:
           node-version: 'lts/*'
-          cache: 'npm'
+          package-manager-cache: false
 
-      - name: Install dependencies
-        run: npm ci
+      - name: ⚙️ Setup Bun
+        uses: oven-sh/setup-bun@v2.2.0
+        with:
+          bun-version: latest
 
-      - name: Release
+      - name: 📦 Install dependencies
+        run: bun install --frozen-lockfile
+
+      - name: 📦 Release
         # Publishes to npm with a provenance attestation (requires id-token: write above).
         # Lint and build run automatically as part of the release process.
         #
