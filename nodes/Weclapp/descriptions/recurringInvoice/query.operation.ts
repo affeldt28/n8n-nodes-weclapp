@@ -3,18 +3,14 @@ import {
 	additionalPropertiesQueryParameter,
 	filterQueryParameters,
 	includeReferencedEntitiesQueryParameter,
-	offsetQueryParameter,
-	pageQueryParameter,
-	pageSizeQueryParameter,
+	paginationQueryParameters,
 	propertiesQueryParameter,
 	serializeNullsQueryParameter,
 	sortQueryParameter,
 } from '../shared/QueryParameter';
 
 const properties: INodeProperties[] = [
-	offsetQueryParameter,
-	pageQueryParameter,
-	pageSizeQueryParameter,
+	...paginationQueryParameters,
 	serializeNullsQueryParameter,
 	sortQueryParameter,
 	...filterQueryParameters,

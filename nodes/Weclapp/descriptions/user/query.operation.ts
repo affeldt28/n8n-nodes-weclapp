@@ -2,18 +2,14 @@ import { type INodeProperties, updateDisplayOptions } from 'n8n-workflow';
 import {
 	filterQueryParameters,
 	includeReferencedEntitiesQueryParameter,
-	offsetQueryParameter,
-	pageQueryParameter,
-	pageSizeQueryParameter,
+	paginationQueryParameters,
 	propertiesQueryParameter,
 	serializeNullsQueryParameter,
 	sortQueryParameter,
 } from '../shared/QueryParameter';
 
 const properties: INodeProperties[] = [
-	offsetQueryParameter,
-	pageQueryParameter,
-	pageSizeQueryParameter,
+	...paginationQueryParameters,
 	serializeNullsQueryParameter,
 	sortQueryParameter,
 	...filterQueryParameters,
