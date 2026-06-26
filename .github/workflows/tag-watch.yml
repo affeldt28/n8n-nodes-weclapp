@@ -1,0 +1,54 @@
+name: 🏷️ Tag
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - 'package.json'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  tag:
+    name: 🏷️ Tag
+    runs-on: ubuntu-latest
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v5.0.1
+        with:
+          token: ${{ secrets.TAG_WATCH_PAT }}
+
+      - name: ⚙️ Setup git
+        shell: bash
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: 📦 Read version from package.json
+        id: version
+        run: |
+          echo "version=v$(jq -r .version package.json)" >> $GITHUB_OUTPUT
+
+      - name: 🔎 Check if tag exists
+        id: check_tag
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          if git rev-parse "$VERSION" >/dev/null 2>&1; then
+              echo "Tag $VERSION already exists."
+              exit 0
+          else
+              echo "Tag $VERSION does not exist."
+          fi
+
+      - name: 🏷️ Create tag
+        if: steps.check_tag.outcome == 'success'
+        env:
+          VERSION: ${{ steps.version.outputs.version }}
+        run: |
+          git tag -f -a ${VERSION} -m "Release ${VERSION}"
+          git push -f origin ${VERSION}
