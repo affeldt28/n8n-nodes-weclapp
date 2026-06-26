@@ -1,6 +1,5 @@
 import { type INodeProperties, updateDisplayOptions } from 'n8n-workflow';
 import {
-	additionalPropertiesQueryParameter,
 	filterQueryParameters,
 	includeReferencedEntitiesQueryParameter,
 	paginationQueryParameters,
@@ -16,7 +15,6 @@ const properties: INodeProperties[] = [
 	...filterQueryParameters,
 	propertiesQueryParameter,
 	includeReferencedEntitiesQueryParameter,
-	additionalPropertiesQueryParameter,
 ];
 
 const displayOptions = {

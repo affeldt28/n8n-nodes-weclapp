@@ -5,6 +5,9 @@ import type {
 	INodeProperties,
 } from 'n8n-workflow';
 
+/**
+ * @deprecated ⚠️ UNTESTED: This function is not tested and may not work as expected. Use with caution.
+ */
 export const additionalPropertiesQueryParameter: INodeProperties = {
 	displayName: 'Additional Properties',
 	name: 'additionalProperties',
