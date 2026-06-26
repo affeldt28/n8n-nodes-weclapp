@@ -11,7 +11,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/affeldt28/n8n-nodes-weclapp.git"
+		"url": "git+https://github.com/affeldt28/n8n-nodes-weclapp.git"
 	},
 	"scripts": {
 		"build": "n8n-node build",
