@@ -98,6 +98,18 @@ export const filterQueryParameters: INodeProperties[] = [
 			'Use the weclapp property name, including nested properties such as customAttribute3387.value, as the left value.',
 	},
 	{
+		displayName:
+			'Use weclapp filter syntax for advanced filters. See the <a href="https://www.weclapp.com/api/#overview--filtering" target="_blank">weclapp filtering documentation</a> for supported operators and examples.',
+		name: 'advancedFiltersNotice',
+		type: 'notice',
+		default: '',
+		displayOptions: {
+			show: {
+				filterMode: ['advanced'],
+			},
+		},
+	},
+	{
 		displayName: 'Advanced Filters',
 		name: 'advancedFilters',
 		type: 'fixedCollection',
