@@ -12,50 +12,16 @@ const properties: INodeProperties[] = [
 		placeholder: 'Add Attribute',
 		options: [
 			{
-				name: 'birthDate',
-				displayName: 'Birth Date',
-				description: 'Birth date of the user',
-				type: 'dateTime',
-				typeOptions: {
-					dateOnly: true,
-				},
-				default: '',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'birthDate',
-						value: '={{ Date.parse($value) }}',
-					},
-				},
-			},
-			{
-				name: 'email',
-				displayName: 'Email',
-				description: 'Email address of the user',
+				name: 'username',
+				displayName: 'Username',
+				description: 'Username of the user',
 				type: 'string',
 				default: '',
-				placeholder: 'jane.doe@example.com',
+				placeholder: 'jane.doe',
 				routing: {
 					send: {
 						type: 'body',
-						property: 'email',
-					},
-				},
-			},
-			{
-				name: 'faxNumber',
-				displayName: 'Fax Number',
-				description: 'Fax number of the user',
-				type: 'string',
-				typeOptions: {
-					maxLength: 100,
-				},
-				default: '',
-				placeholder: '+49 30 12345678',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'faxNumber',
+						property: 'username',
 					},
 				},
 			},
@@ -94,16 +60,81 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				name: 'licenses',
-				displayName: 'Licenses',
-				description: 'Licenses assigned to the user as a JSON array',
-				type: 'json',
+				name: 'title',
+				displayName: 'Title',
+				description: 'Title of the user',
+				type: 'string',
+				typeOptions: {
+					maxLength: 1000,
+				},
 				default: '',
-				placeholder: '["CRM", "ERP"]',
+				placeholder: 'Dr.',
 				routing: {
 					send: {
 						type: 'body',
-						property: 'licenses',
+						property: 'title',
+					},
+				},
+			},
+			{
+				name: 'birthDate',
+				displayName: 'Birth Date',
+				description: 'Birth date of the user',
+				type: 'dateTime',
+				typeOptions: {
+					dateOnly: true,
+				},
+				default: '',
+				routing: {
+					send: {
+						type: 'body',
+						property: 'birthDate',
+						value: '={{ Date.parse($value) }}',
+					},
+				},
+			},
+			{
+				name: 'imageId',
+				displayName: 'Image ID',
+				description: 'ID of the image of the user',
+				type: 'string',
+				default: '',
+				placeholder: '12345',
+				routing: {
+					send: {
+						type: 'body',
+						property: 'imageId',
+					},
+				},
+			},
+			{
+				name: 'email',
+				displayName: 'Email',
+				description: 'Email address of the user',
+				type: 'string',
+				default: '',
+				placeholder: 'jane.doe@example.com',
+				routing: {
+					send: {
+						type: 'body',
+						property: 'email',
+					},
+				},
+			},
+			{
+				name: 'phoneNumber',
+				displayName: 'Phone Number',
+				description: 'Phone number of the user',
+				type: 'string',
+				typeOptions: {
+					maxLength: 100,
+				},
+				default: '',
+				placeholder: '+49 30 12345678',
+				routing: {
+					send: {
+						type: 'body',
+						property: 'phoneNumber',
 					},
 				},
 			},
@@ -125,9 +156,9 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				name: 'phoneNumber',
-				displayName: 'Phone Number',
-				description: 'Phone number of the user',
+				name: 'faxNumber',
+				displayName: 'Fax Number',
+				description: 'Fax number of the user',
 				type: 'string',
 				typeOptions: {
 					maxLength: 100,
@@ -137,7 +168,7 @@ const properties: INodeProperties[] = [
 				routing: {
 					send: {
 						type: 'body',
-						property: 'phoneNumber',
+						property: 'faxNumber',
 					},
 				},
 			},
@@ -169,19 +200,16 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				name: 'title',
-				displayName: 'Title',
-				description: 'Title of the user',
-				type: 'string',
-				typeOptions: {
-					maxLength: 1000,
-				},
-				default: '',
-				placeholder: 'Dr.',
+				name: 'licenses',
+				displayName: 'Licenses',
+				description: 'Licenses assigned to the user as a JSON array',
+				type: 'json',
+				default: '[]',
+				placeholder: '["CRM", "ERP"]',
 				routing: {
 					send: {
 						type: 'body',
-						property: 'title',
+						property: 'licenses',
 					},
 				},
 			},
@@ -190,8 +218,8 @@ const properties: INodeProperties[] = [
 				displayName: 'User Roles',
 				description: 'User roles as a JSON array',
 				type: 'json',
-				default: '',
-				placeholder: '[{}]',
+				default: '[]',
+				placeholder: '[{"id":"12345"}]',
 				routing: {
 					send: {
 						type: 'body',
