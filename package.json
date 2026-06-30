@@ -1,6 +1,6 @@
 {
 	"name": "@affeldt28/n8n-nodes-weclapp",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "n8n node for Weclapp",
 	"license": "MIT",
 	"homepage": "https://github.com/affeldt28/n8n-nodes-weclapp",

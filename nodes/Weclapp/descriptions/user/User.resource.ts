@@ -18,7 +18,7 @@ export const description: INodeProperties[] = [
 		options: [
 			{
 				name: 'Count',
-				description: 'Count Users',
+				description: 'Count users',
 				value: 'count',
 				routing: {
 					request: {
@@ -26,7 +26,7 @@ export const description: INodeProperties[] = [
 						url: '/user/count',
 					},
 				},
-				action: 'Count Users',
+				action: 'Count users',
 			},
 			{
 				name: 'Create',
@@ -42,11 +42,11 @@ export const description: INodeProperties[] = [
 						json: true,
 					},
 				},
-				action: 'Create a user',
+				action: 'Create user',
 			},
 			{
-				name: 'Query',
-				description: 'Query Users',
+				name: 'Get Many',
+				description: 'Retrieve a list of users',
 				value: 'query',
 				routing: {
 					request: {
@@ -54,7 +54,7 @@ export const description: INodeProperties[] = [
 						url: '/user',
 					},
 				},
-				action: 'Query Users',
+				action: 'Get many users',
 			},
 		],
 	},

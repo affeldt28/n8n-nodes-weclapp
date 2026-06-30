@@ -7,7 +7,7 @@ export const includeReferencedEntitiesQueryParameter: INodeProperties = {
 	typeOptions: {
 		multipleValues: true,
 	},
-	default: '',
+	default: {},
 	placeholder: 'Add Referenced Entity',
 	options: [
 		{
@@ -19,7 +19,7 @@ export const includeReferencedEntitiesQueryParameter: INodeProperties = {
 					displayName: 'Entity Name',
 					type: 'string',
 					default: '',
-					placeholder: 'e.g.: customer',
+					placeholder: 'e.g. customer',
 					required: true,
 				},
 			],

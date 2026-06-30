@@ -1,5 +1,5 @@
 {
-	"node": "n8n-nodes-weclapp-weclapp",
+	"node": "@affeldt28/n8n-nodes-weclapp.weclapp",
 	"nodeVersion": "1.0",
 	"codexVersion": "1.0",
 	"categories": [

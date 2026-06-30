@@ -4,8 +4,19 @@ const properties: INodeProperties[] = [
 	{
 		name: 'articleId',
 		displayName: 'Article ID',
-		type: 'string',
-		default: '',
+		type: 'resourceLocator',
+		default: {
+			mode: 'id',
+			value: '',
+		},
+		modes: [
+			{
+				displayName: 'By ID',
+				name: 'id',
+				type: 'string',
+				placeholder: 'e.g. 12345',
+			},
+		],
 		required: true,
 	},
 ];

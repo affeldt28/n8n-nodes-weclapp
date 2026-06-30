@@ -135,7 +135,7 @@ export const filterQueryParameters: INodeProperties[] = [
 							'weclapp property to filter, including nested properties such as customAttribute3387.value',
 						type: 'string',
 						default: '',
-						placeholder: 'createdDate',
+						placeholder: 'e.g. createdDate',
 						required: true,
 					},
 					{

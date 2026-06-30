@@ -29,7 +29,7 @@ export const additionalPropertiesQueryParameter: INodeProperties = {
 						'Additional calculated or complex property to include in the response',
 					type: 'string',
 					default: '',
-					placeholder: 'currentSalesPrice',
+					placeholder: 'e.g. currentSalesPrice',
 					required: true,
 				},
 			],

@@ -16,11 +16,11 @@ export const customAttributesBodyProperties: INodeProperties = {
 			values: [
 				{
 					name: 'attributeDefinitionId',
-					displayName: 'Attribute Definition ID',
-					description: 'ID of the custom attribute definition',
+					displayName: 'Attribute Definition Id',
+					description: 'Id of the custom attribute definition',
 					type: 'string',
 					default: '',
-					placeholder: '12345',
+					placeholder: 'e.g. 12345',
 				},
 				{
 					name: 'dataType',
@@ -38,7 +38,7 @@ export const customAttributesBodyProperties: INodeProperties = {
 							value: 'dateValue',
 						},
 						{
-							name: 'Entity ID',
+							name: 'Entity Id',
 							value: 'entityId',
 						},
 						{
@@ -50,7 +50,7 @@ export const customAttributesBodyProperties: INodeProperties = {
 							value: 'numberValue',
 						},
 						{
-							name: 'Selected Value ID',
+							name: 'Selected Value Id',
 							value: 'selectedValueId',
 						},
 						{
@@ -81,7 +81,7 @@ export const customAttributesBodyProperties: INodeProperties = {
 					description: 'Date value as an integer timestamp',
 					type: 'number',
 					default: '',
-					placeholder: '1735689600000',
+					placeholder: 'e.g. 1735689600000',
 					displayOptions: {
 						show: {
 							dataType: ['dateValue'],
@@ -90,11 +90,11 @@ export const customAttributesBodyProperties: INodeProperties = {
 				},
 				{
 					name: 'entityId',
-					displayName: 'Entity ID',
-					description: 'ID of the referenced entity',
+					displayName: 'Entity Id',
+					description: 'Id of the referenced entity',
 					type: 'string',
 					default: '',
-					placeholder: '12345',
+					placeholder: 'e.g. 12345',
 					displayOptions: {
 						show: {
 							dataType: ['entityId'],
@@ -108,7 +108,7 @@ export const customAttributesBodyProperties: INodeProperties = {
 						'Entity references as a JSON array of objects containing entityId and entityName',
 					type: 'json',
 					default: '',
-					placeholder: '[{"entityId":"12345","entityName":"Example"}]',
+					placeholder: 'e.g. [{"entityId":"12345","entityName":"Example"}]',
 					displayOptions: {
 						show: {
 							dataType: ['entityReferences'],
@@ -121,7 +121,7 @@ export const customAttributesBodyProperties: INodeProperties = {
 					description: 'Decimal value of the custom attribute',
 					type: 'number',
 					default: '',
-					placeholder: '42.5',
+					placeholder: 'e.g. 42.5',
 					displayOptions: {
 						show: {
 							dataType: ['numberValue'],
@@ -130,11 +130,11 @@ export const customAttributesBodyProperties: INodeProperties = {
 				},
 				{
 					name: 'selectedValueId',
-					displayName: 'Selected Value ID',
-					description: 'ID of the selected custom attribute value',
+					displayName: 'Selected Value Id',
+					description: 'Id of the selected custom attribute value',
 					type: 'string',
 					default: '',
-					placeholder: '12345',
+					placeholder: 'e.g. 12345',
 					displayOptions: {
 						show: {
 							dataType: ['selectedValueId'],
@@ -147,7 +147,7 @@ export const customAttributesBodyProperties: INodeProperties = {
 					description: 'Selected values as a JSON array',
 					type: 'json',
 					default: '',
-					placeholder: '[{}]',
+					placeholder: 'e.g. [{}]',
 					displayOptions: {
 						show: {
 							dataType: ['selectedValues'],
@@ -160,7 +160,7 @@ export const customAttributesBodyProperties: INodeProperties = {
 					description: 'String value of the custom attribute',
 					type: 'string',
 					default: '',
-					placeholder: 'Example value',
+					placeholder: 'e.g. Example value',
 					displayOptions: {
 						show: {
 							dataType: ['stringValue'],

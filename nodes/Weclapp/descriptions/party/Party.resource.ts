@@ -17,8 +17,8 @@ export const description: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Query',
-				description: 'Query Parties',
+				name: 'Get Many',
+				description: 'Retrieve a list of parties',
 				value: 'query',
 				routing: {
 					request: {
@@ -26,11 +26,11 @@ export const description: INodeProperties[] = [
 						url: '/party',
 					},
 				},
-				action: 'Query Parties',
+				action: 'Get many parties',
 			},
 			{
 				name: 'Create',
-				description: 'Create a Party',
+				description: 'Create a party',
 				value: 'create',
 				routing: {
 					request: {
@@ -38,11 +38,11 @@ export const description: INodeProperties[] = [
 						url: '/party',
 					},
 				},
-				action: 'Create Parties',
+				action: 'Create party',
 			},
 			{
 				name: 'Count',
-				description: 'Count Parties',
+				description: 'Count parties',
 				value: 'count',
 				routing: {
 					request: {
@@ -50,7 +50,7 @@ export const description: INodeProperties[] = [
 						url: '/party/count',
 					},
 				},
-				action: 'Count Parties',
+				action: 'Count parties',
 			},
 		],
 	},

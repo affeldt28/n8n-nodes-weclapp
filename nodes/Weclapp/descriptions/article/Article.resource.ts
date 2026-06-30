@@ -17,8 +17,8 @@ export const description: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Query',
-				description: 'Query Articles',
+				name: 'Get Many',
+				description: 'Retrieve a list of articles',
 				value: 'query',
 				routing: {
 					request: {
@@ -26,11 +26,11 @@ export const description: INodeProperties[] = [
 						url: '/article',
 					},
 				},
-				action: 'Query Articles',
+				action: 'Get many articles',
 			},
 			{
 				name: 'Count',
-				description: 'Count Articles',
+				description: 'Count articles',
 				value: 'count',
 				routing: {
 					request: {
@@ -38,19 +38,19 @@ export const description: INodeProperties[] = [
 						url: '/article/count',
 					},
 				},
-				action: 'Count Articles',
+				action: 'Count articles',
 			},
 			{
-				name: 'Query by ID',
-				description: 'Query Article by ID',
+				name: 'Get',
+				description: 'Retrieve an article',
 				value: 'queryId',
 				routing: {
 					request: {
 						method: 'GET',
-						url: '=/article/id/{{ $parameter.articleId }}',
+						url: '=/article/id/{{ $parameter.articleId.value }}',
 					},
 				},
-				action: 'Query Article by ID',
+				action: 'Get article',
 			},
 		],
 	},

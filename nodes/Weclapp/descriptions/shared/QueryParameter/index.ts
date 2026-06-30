@@ -2,6 +2,7 @@ export * from './additionalProperties';
 export * from './dryRun';
 export * from './filter';
 export * from './includeReferencedEntities';
+export * from './options';
 export * from './pagination';
 export * from './properties';
 export * from './serializeNulls';

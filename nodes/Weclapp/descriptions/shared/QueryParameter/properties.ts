@@ -7,7 +7,7 @@ export const propertiesQueryParameter: INodeProperties = {
 	typeOptions: {
 		multipleValues: true,
 	},
-	default: '',
+	default: {},
 	placeholder: 'Add Property',
 	options: [
 		{
@@ -20,7 +20,7 @@ export const propertiesQueryParameter: INodeProperties = {
 					description: 'Property or nested property path to include in the response',
 					type: 'string',
 					default: '',
-					placeholder: 'contacts.lastName',
+					placeholder: 'e.g. contacts.lastName',
 					required: true,
 				},
 			],

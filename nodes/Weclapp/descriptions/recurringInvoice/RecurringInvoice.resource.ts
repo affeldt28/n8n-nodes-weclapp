@@ -28,8 +28,8 @@ export const description: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Query',
-				description: 'Query Recurring Invoices',
+				name: 'Get Many',
+				description: 'Retrieve a list of recurring invoices',
 				value: 'query',
 				routing: {
 					request: {
@@ -37,11 +37,11 @@ export const description: INodeProperties[] = [
 						url: '/recurringInvoice',
 					},
 				},
-				action: 'Query Recurring Invoices',
+				action: 'Get many recurring invoices',
 			},
 			{
 				name: 'Count',
-				description: 'Count Recurring Invoices',
+				description: 'Count recurring invoices',
 				value: 'count',
 				routing: {
 					request: {
@@ -49,7 +49,7 @@ export const description: INodeProperties[] = [
 						url: '/recurringInvoice/count',
 					},
 				},
-				action: 'Count Recurring Invoices',
+				action: 'Count recurring invoices',
 			},
 		],
 	},

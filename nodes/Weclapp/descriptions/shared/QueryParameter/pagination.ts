@@ -17,7 +17,7 @@ export const paginationQueryParameters: INodeProperties[] = [
 			minValue: 1,
 		},
 		default: 1,
-		placeholder: '1',
+		placeholder: 'e.g. 1',
 		displayOptions: {
 			show: {
 				usePagination: [true],
@@ -40,7 +40,7 @@ export const paginationQueryParameters: INodeProperties[] = [
 			maxValue: 1000,
 		},
 		default: 100,
-		placeholder: '100',
+		placeholder: 'e.g. 100',
 		displayOptions: {
 			show: {
 				usePagination: [true],
@@ -62,7 +62,7 @@ export const paginationQueryParameters: INodeProperties[] = [
 			minValue: 0,
 		},
 		default: 0,
-		placeholder: '0',
+		placeholder: 'e.g. 0',
 		displayOptions: {
 			show: {
 				usePagination: [true],

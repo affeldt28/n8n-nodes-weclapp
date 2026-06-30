@@ -17,7 +17,7 @@ const properties: INodeProperties[] = [
 				description: 'Username of the user',
 				type: 'string',
 				default: '',
-				placeholder: 'jane.doe',
+				placeholder: 'e.g. jane.doe',
 				routing: {
 					send: {
 						type: 'body',
@@ -34,7 +34,7 @@ const properties: INodeProperties[] = [
 					maxLength: 50,
 				},
 				default: '',
-				placeholder: 'Jane',
+				placeholder: 'e.g. Jane',
 				routing: {
 					send: {
 						type: 'body',
@@ -51,7 +51,7 @@ const properties: INodeProperties[] = [
 					maxLength: 50,
 				},
 				default: '',
-				placeholder: 'Doe',
+				placeholder: 'e.g. Doe',
 				routing: {
 					send: {
 						type: 'body',
@@ -68,7 +68,7 @@ const properties: INodeProperties[] = [
 					maxLength: 1000,
 				},
 				default: '',
-				placeholder: 'Dr.',
+				placeholder: 'e.g. Dr.',
 				routing: {
 					send: {
 						type: 'body',
@@ -95,11 +95,11 @@ const properties: INodeProperties[] = [
 			},
 			{
 				name: 'imageId',
-				displayName: 'Image ID',
-				description: 'ID of the image of the user',
+				displayName: 'Image Id',
+				description: 'Id of the image of the user',
 				type: 'string',
 				default: '',
-				placeholder: '12345',
+				placeholder: 'e.g. 12345',
 				routing: {
 					send: {
 						type: 'body',
@@ -113,7 +113,7 @@ const properties: INodeProperties[] = [
 				description: 'Email address of the user',
 				type: 'string',
 				default: '',
-				placeholder: 'jane.doe@example.com',
+				placeholder: 'e.g. jane.doe@example.com',
 				routing: {
 					send: {
 						type: 'body',
@@ -130,7 +130,7 @@ const properties: INodeProperties[] = [
 					maxLength: 100,
 				},
 				default: '',
-				placeholder: '+49 30 12345678',
+				placeholder: 'e.g. +49 30 12345678',
 				routing: {
 					send: {
 						type: 'body',
@@ -147,7 +147,7 @@ const properties: INodeProperties[] = [
 					maxLength: 100,
 				},
 				default: '',
-				placeholder: '+49 151 12345678',
+				placeholder: 'e.g. +49 151 12345678',
 				routing: {
 					send: {
 						type: 'body',
@@ -164,7 +164,7 @@ const properties: INodeProperties[] = [
 					maxLength: 100,
 				},
 				default: '',
-				placeholder: '+49 30 12345678',
+				placeholder: 'e.g. +49 30 12345678',
 				routing: {
 					send: {
 						type: 'body',
@@ -205,7 +205,7 @@ const properties: INodeProperties[] = [
 				description: 'Licenses assigned to the user as a JSON array',
 				type: 'json',
 				default: '[]',
-				placeholder: '["CRM", "ERP"]',
+				placeholder: 'e.g. ["CRM", "ERP"]',
 				routing: {
 					send: {
 						type: 'body',
@@ -219,7 +219,7 @@ const properties: INodeProperties[] = [
 				description: 'User roles as a JSON array',
 				type: 'json',
 				default: '[]',
-				placeholder: '[{"id":"12345"}]',
+				placeholder: 'e.g. [{"id":"12345"}]',
 				routing: {
 					send: {
 						type: 'body',
