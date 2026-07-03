@@ -52,5 +52,5 @@ jobs:
         env:
           VERSION: ${{ steps.version.outputs.version }}
         run: |
-          git tag -f -a ${VERSION} -m "Release ${VERSION}"
-          git push -f origin ${VERSION}
+          git tag -a ${VERSION} -m "Release ${VERSION}"
+          git push origin ${VERSION}
