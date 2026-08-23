@@ -1,7 +1,10 @@
 import type { INodeProperties } from 'n8n-workflow';
 import * as count from './count.operation';
+import * as create from './create.operation';
+import * as delete_ from './delete.operation';
 import * as query from './query.operation';
 import * as queryId from './queryId.operation';
+import * as update from './update.operation';
 
 export const description: INodeProperties[] = [
 	{
@@ -29,6 +32,18 @@ export const description: INodeProperties[] = [
 				action: 'Get many webhooks',
 			},
 			{
+				name: 'Create',
+				description: 'Create a webhook',
+				value: 'create',
+				routing: {
+					request: {
+						method: 'POST',
+						url: '/webhook',
+					},
+				},
+				action: 'Create a webhook',
+			},
+			{
 				name: 'Count',
 				description: 'Count webhooks',
 				value: 'count',
@@ -52,9 +67,36 @@ export const description: INodeProperties[] = [
 				},
 				action: 'Get webhook',
 			},
+			{
+				name: 'Update',
+				description: 'Update a webhook',
+				value: 'update',
+				routing: {
+					request: {
+						method: 'PUT',
+						url: '=/webhook/id/{{ $parameter.webhookId.value }}',
+					},
+				},
+				action: 'Update a webhook',
+			},
+			{
+				name: 'Delete',
+				description: 'Delete a webhook',
+				value: 'delete',
+				routing: {
+					request: {
+						method: 'DELETE',
+						url: '=/webhook/id/{{ $parameter.webhookId.value }}',
+					},
+				},
+				action: 'Delete a webhook',
+			},
 		],
 	},
 	...query.description,
+	...create.description,
 	...count.description,
 	...queryId.description,
+	...update.description,
+	...delete_.description,
 ];

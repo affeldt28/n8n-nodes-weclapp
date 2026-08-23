@@ -89,9 +89,9 @@ This node currently supports the following weclapp resources and operations:
 | Query webhooks | [GET /webhook](https://www.weclapp.com/api/#get-/webhook)                       | ✅           |
 | Create webhook | [POST /webhook](https://www.weclapp.com/api/#post-/webhook)                     | ✅           |
 | Count webhooks | [GET /webhook/count](https://www.weclapp.com/api/#get-/webhook/count)           | ✅           |
-| Get webhook    | [GET /webhook/id/{id}](https://www.weclapp.com/api/#get-/webhook/id/-id-)       | 🚫           |
-| Update webhook | [PUT /webhook/id/{id}](https://www.weclapp.com/api/#put-/webhook/id/-id-)       | 🚫           |
-| Delete webhook | [DELETE /webhook/id/{id}](https://www.weclapp.com/api/#delete-/webhook/id/-id-) | 🚫           |
+| Get webhook    | [GET /webhook/id/{id}](https://www.weclapp.com/api/#get-/webhook/id/-id-)       | ✅           |
+| Update webhook | [PUT /webhook/id/{id}](https://www.weclapp.com/api/#put-/webhook/id/-id-)       | ✅           |
+| Delete webhook | [DELETE /webhook/id/{id}](https://www.weclapp.com/api/#delete-/webhook/id/-id-) | ✅           |
 
 ## Credentials
 
