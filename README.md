@@ -82,6 +82,17 @@ This node currently supports the following weclapp resources and operations:
 | User image            | [GET /user/id/{id}/userImage](https://www.weclapp.com/api/#get-/user/id/-id-/userImage)                   | 🚫           |
 | User image thumbnail  | [GET /user/id/{id}/userImageThumbnail](https://www.weclapp.com/api/#get-/user/id/-id-/userImageThumbnail) | 🚫           |
 
+### Webhook
+
+| Operation      | API                                                                             | Implemented |
+| -------------- | ------------------------------------------------------------------------------- | ----------- |
+| Query webhooks | [GET /webhook](https://www.weclapp.com/api/#get-/webhook)                       | ✅           |
+| Create webhook | [POST /webhook](https://www.weclapp.com/api/#post-/webhook)                     | ✅           |
+| Count webhooks | [GET /webhook/count](https://www.weclapp.com/api/#get-/webhook/count)           | ✅           |
+| Get webhook    | [GET /webhook/id/{id}](https://www.weclapp.com/api/#get-/webhook/id/-id-)       | 🚫           |
+| Update webhook | [PUT /webhook/id/{id}](https://www.weclapp.com/api/#put-/webhook/id/-id-)       | 🚫           |
+| Delete webhook | [DELETE /webhook/id/{id}](https://www.weclapp.com/api/#delete-/webhook/id/-id-) | 🚫           |
+
 ## Credentials
 
 This node uses the **Weclapp API** credential.

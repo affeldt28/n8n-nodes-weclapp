@@ -1,5 +1,5 @@
 import { type INodeType, type INodeTypeDescription, NodeConnectionTypes } from 'n8n-workflow';
-import { article, party, recurringInvoice, user } from './descriptions';
+import { article, party, recurringInvoice, user, webhook } from './descriptions';
 
 export class Weclapp implements INodeType {
 	description: INodeTypeDescription = {
@@ -48,6 +48,10 @@ export class Weclapp implements INodeType {
 						name: 'Party',
 						value: 'party',
 					},
+					{
+						name: 'Webhook',
+						value: 'webhook',
+					},
 				],
 				default: 'user',
 			},
@@ -56,6 +60,7 @@ export class Weclapp implements INodeType {
 			...party.description,
 			...recurringInvoice.description,
 			...user.description,
+			...webhook.description,
 		],
 	};
 	methods = {};
