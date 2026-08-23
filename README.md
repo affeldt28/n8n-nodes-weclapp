@@ -82,6 +82,22 @@ This node currently supports the following weclapp resources and operations:
 | User image            | [GET /user/id/{id}/userImage](https://www.weclapp.com/api/#get-/user/id/-id-/userImage)                   | 🚫           |
 | User image thumbnail  | [GET /user/id/{id}/userImageThumbnail](https://www.weclapp.com/api/#get-/user/id/-id-/userImageThumbnail) | 🚫           |
 
+### Ticket
+
+| Operation                 | API                                                                                                                       | Implemented |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------- | ----------- |
+| Query tickets             | [GET /ticket](https://www.weclapp.com/api/#get-/ticket)                                                                   | ✅           |
+| Create ticket             | [POST /ticket](https://www.weclapp.com/api/#post-/ticket)                                                                 | ✅           |
+| Count tickets             | [GET /ticket/count](https://www.weclapp.com/api/#get-/ticket/count)                                                       | ✅           |
+| Get ticket                | [GET /ticket/id/{id}](https://www.weclapp.com/api/#get-/ticket/id/-id-)                                                   | ✅           |
+| Update ticket             | [PUT /ticket/id/{id}](https://www.weclapp.com/api/#put-/ticket/id/-id-)                                                   | ✅           |
+| Delete ticket             | [DELETE /ticket/id/{id}](https://www.weclapp.com/api/#delete-/ticket/id/-id-)                                             | ✅           |
+| Create performance record | [POST /ticket/id/{id}/createPerformanceRecord](https://www.weclapp.com/api/#post-/ticket/id/-id-/createPerformanceRecord) | 🚫           |
+| Create public page        | [POST /ticket/id/{id}/createPublicPage](https://www.weclapp.com/api/#post-/ticket/id/-id-/createPublicPage)               | 🚫           |
+| Disable public page       | [POST /ticket/id/{id}/disablePublicPage](https://www.weclapp.com/api/#post-/ticket/id/-id-/disablePublicPage)             | 🚫           |
+| Link sales order          | [POST /ticket/id/{id}/linkSalesOrder](https://www.weclapp.com/api/#post-/ticket/id/-id-/linkSalesOrder)                   | 🚫           |
+| Unlink sales order        | [POST /ticket/id/{id}/unlinkSalesOrder](https://www.weclapp.com/api/#post-/ticket/id/-id-/unlinkSalesOrder)               | 🚫           |
+
 ### Webhook
 
 | Operation      | API                                                                             | Implemented |
