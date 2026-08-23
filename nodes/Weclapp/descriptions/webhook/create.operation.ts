@@ -1,6 +1,6 @@
 import { type INodeProperties, updateDisplayOptions } from 'n8n-workflow';
 import { dryRunQueryParameter } from '../shared/QueryParameter';
-import { createUpdateProperties } from './shared';
+import { createUpdateProperties } from './shared.properties';
 
 const properties: INodeProperties[] = [dryRunQueryParameter, createUpdateProperties];
 

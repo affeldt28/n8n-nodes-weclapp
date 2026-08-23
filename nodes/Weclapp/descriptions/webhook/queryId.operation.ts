@@ -1,5 +1,5 @@
 import { type INodeProperties, updateDisplayOptions } from 'n8n-workflow';
-import { webhookIdParameter } from './shared';
+import { webhookIdParameter } from './shared.properties';
 
 const properties: INodeProperties[] = [webhookIdParameter];
 
