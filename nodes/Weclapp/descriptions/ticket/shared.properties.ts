@@ -569,7 +569,6 @@ export const createUpdateProperties: INodeProperties = {
 		{
 			displayName: 'Ticket Number',
 			name: 'ticketNumber',
-			description: 'Ticket number',
 			type: 'string',
 			typeOptions: {
 				maxLength: 64,

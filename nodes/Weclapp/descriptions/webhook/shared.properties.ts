@@ -29,7 +29,7 @@ export const createUpdateProperties: INodeProperties = {
 		{
 			displayName: 'At Create',
 			name: 'atCreate',
-			description: 'If true, the webhook will be triggered when the resource is created.',
+			description: 'Whether the webhook will be triggered when the resource is created',
 			type: 'boolean',
 			default: false,
 			routing: {
@@ -42,7 +42,7 @@ export const createUpdateProperties: INodeProperties = {
 		{
 			displayName: 'At Delete',
 			name: 'atDelete',
-			description: 'If true, the webhook will be triggered when the resource is deleted.',
+			description: 'Whether the webhook will be triggered when the resource is deleted',
 			type: 'boolean',
 			default: false,
 			routing: {
@@ -55,7 +55,7 @@ export const createUpdateProperties: INodeProperties = {
 		{
 			displayName: 'At Update',
 			name: 'atUpdate',
-			description: 'If true, the webhook will be triggered when the resource is updated.',
+			description: 'Whether the webhook will be triggered when the resource is updated',
 			type: 'boolean',
 			default: false,
 			routing: {
@@ -68,7 +68,7 @@ export const createUpdateProperties: INodeProperties = {
 		{
 			displayName: 'Deactivated Date',
 			name: 'deactivatedDate',
-			description: 'The date when the resource was deactivated.',
+			description: 'The date when the resource was deactivated',
 			type: 'dateTime',
 			default: '',
 			routing: {

@@ -66,7 +66,7 @@ export const customAttributesBodyProperties: INodeProperties = {
 				{
 					displayName: 'Boolean Value',
 					name: 'booleanValue',
-					description: 'Boolean value of the custom attribute',
+					description: 'Whether the custom attribute is true or false',
 					type: 'boolean',
 					default: false,
 					displayOptions: {
