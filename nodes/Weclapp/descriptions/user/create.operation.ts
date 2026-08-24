@@ -95,8 +95,8 @@ const properties: INodeProperties[] = [
 			},
 			{
 				name: 'imageId',
-				displayName: 'Image Id',
-				description: 'Id of the image of the user',
+				displayName: 'Image ID',
+				description: 'ID of the image of the user',
 				type: 'string',
 				default: '',
 				placeholder: 'e.g. 12345',
@@ -219,7 +219,7 @@ const properties: INodeProperties[] = [
 				description: 'User roles as a JSON array',
 				type: 'json',
 				default: '[]',
-				placeholder: 'e.g. [{"id":"12345"}]',
+				placeholder: 'e.g. [{"ID":"12345"}]',
 				routing: {
 					send: {
 						type: 'body',

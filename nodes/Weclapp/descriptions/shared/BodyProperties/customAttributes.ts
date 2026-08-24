@@ -16,8 +16,8 @@ export const customAttributesBodyProperties: INodeProperties = {
 			values: [
 				{
 					name: 'attributeDefinitionId',
-					displayName: 'Attribute Definition Id',
-					description: 'Id of the custom attribute definition',
+					displayName: 'Attribute Definition ID',
+					description: 'ID of the custom attribute definition',
 					type: 'string',
 					default: '',
 					placeholder: 'e.g. 12345',
@@ -38,7 +38,7 @@ export const customAttributesBodyProperties: INodeProperties = {
 							value: 'dateValue',
 						},
 						{
-							name: 'Entity Id',
+							name: 'Entity ID',
 							value: 'entityId',
 						},
 						{
@@ -50,7 +50,7 @@ export const customAttributesBodyProperties: INodeProperties = {
 							value: 'numberValue',
 						},
 						{
-							name: 'Selected Value Id',
+							name: 'Selected Value ID',
 							value: 'selectedValueId',
 						},
 						{
@@ -90,8 +90,8 @@ export const customAttributesBodyProperties: INodeProperties = {
 				},
 				{
 					name: 'entityId',
-					displayName: 'Entity Id',
-					description: 'Id of the referenced entity',
+					displayName: 'Entity ID',
+					description: 'ID of the referenced entity',
 					type: 'string',
 					default: '',
 					placeholder: 'e.g. 12345',
@@ -130,8 +130,8 @@ export const customAttributesBodyProperties: INodeProperties = {
 				},
 				{
 					name: 'selectedValueId',
-					displayName: 'Selected Value Id',
-					description: 'Id of the selected custom attribute value',
+					displayName: 'Selected Value ID',
+					description: 'ID of the selected custom attribute value',
 					type: 'string',
 					default: '',
 					placeholder: 'e.g. 12345',
