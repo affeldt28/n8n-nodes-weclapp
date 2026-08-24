@@ -68,7 +68,7 @@ export const customAttributesBodyProperties: INodeProperties = {
 							name: 'String',
 							value: 'stringValue',
 						},
-					]
+					],
 				},
 				{
 					displayName: 'Date Value',
@@ -89,10 +89,11 @@ export const customAttributesBodyProperties: INodeProperties = {
 				{
 					displayName: 'Entity References',
 					name: 'entityReferences',
-					description: 'Entity references as a JSON array of objects containing entityId and entityName',
+					description:
+						'Entity references as a JSON array of objects containing entityId and entityName',
 					type: 'json',
 					default: '',
-					placeholder: 'e.g.	[{\'entityId\':\'12345\',\'entityName\':\'Example\'}]',
+					placeholder: "e.g.	[{'entityId':'12345','entityName':'Example'}]",
 				},
 				{
 					displayName: 'Number Value',
