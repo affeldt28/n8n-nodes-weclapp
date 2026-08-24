@@ -2,8 +2,8 @@ import type { INodeProperties } from 'n8n-workflow';
 import { customAttributesBodyProperties } from '../shared/BodyProperties';
 
 export const ticketIdParameter: INodeProperties = {
-	name: 'ticketId',
 	displayName: 'Ticket ID',
+	name: 'ticketId',
 	type: 'resourceLocator',
 	default: {
 		mode: 'id',
@@ -21,16 +21,16 @@ export const ticketIdParameter: INodeProperties = {
 };
 
 export const createUpdateProperties: INodeProperties = {
-	name: 'attributes',
 	displayName: 'Attributes',
+	name: 'attributes',
 	type: 'collection',
 	default: {},
 	placeholder: 'Add Attribute',
 	options: [
 		customAttributesBodyProperties,
 		{
-			name: 'assignedPoolingGroupId',
 			displayName: 'Assigned Pooling Group ID',
+			name: 'assignedPoolingGroupId',
 			description: 'ID of the pooling group assigned to the ticket',
 			type: 'string',
 			default: '',
@@ -43,8 +43,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'assignedUserId',
 			displayName: 'Assigned User ID',
+			name: 'assignedUserId',
 			description: 'ID of the user assigned to the ticket',
 			type: 'string',
 			default: '',
@@ -57,8 +57,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'billable',
 			displayName: 'Billable',
+			name: 'billable',
 			description: 'Whether the ticket is billable',
 			type: 'boolean',
 			default: false,
@@ -70,8 +70,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'ccEmailAddresses',
 			displayName: 'CC Email Addresses',
+			name: 'ccEmailAddresses',
 			description: 'Email addresses to receive a copy of ticket emails',
 			type: 'string',
 			typeOptions: {
@@ -87,8 +87,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'contactId',
 			displayName: 'Contact ID',
+			name: 'contactId',
 			description: 'ID of the contact associated with the ticket',
 			type: 'string',
 			default: '',
@@ -101,8 +101,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'contractId',
 			displayName: 'Contract ID',
+			name: 'contractId',
 			description: 'ID of the contract associated with the ticket',
 			type: 'string',
 			default: '',
@@ -115,8 +115,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'description',
 			displayName: 'Description',
+			name: 'description',
 			description: 'Description of the ticket in HTML format',
 			type: 'string',
 			typeOptions: {
@@ -132,8 +132,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'disableEmailTemplates',
 			displayName: 'Disable Email Templates',
+			name: 'disableEmailTemplates',
 			description: 'Whether email templates are disabled for the ticket',
 			type: 'boolean',
 			default: false,
@@ -145,8 +145,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'email',
 			displayName: 'Email',
+			name: 'email',
 			description: 'Email address associated with the ticket',
 			type: 'string',
 			default: '',
@@ -159,8 +159,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'entityReferences',
 			displayName: 'Entity References',
+			name: 'entityReferences',
 			description: 'Entities associated with the ticket',
 			type: 'fixedCollection',
 			typeOptions: {
@@ -170,20 +170,20 @@ export const createUpdateProperties: INodeProperties = {
 			placeholder: 'Add Entity Reference',
 			options: [
 				{
-					name: 'entityReference',
 					displayName: 'Entity Reference',
+					name: 'entityReference',
 					values: [
 						{
-							name: 'entityId',
 							displayName: 'Entity ID',
+							name: 'entityId',
 							description: 'ID of the referenced entity',
 							type: 'string',
 							default: '',
 							placeholder: 'e.g. 12345',
 						},
 						{
-							name: 'entityName',
 							displayName: 'Entity Name',
+							name: 'entityName',
 							description: 'Name of the referenced entity',
 							type: 'string',
 							default: '',
@@ -201,8 +201,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'firstName',
 			displayName: 'First Name',
+			name: 'firstName',
 			description: 'First name of the ticket contact',
 			type: 'string',
 			typeOptions: {
@@ -218,8 +218,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'followUpDate',
 			displayName: 'Follow-Up Date',
+			name: 'followUpDate',
 			description: 'Date on which the ticket should be followed up',
 			type: 'dateTime',
 			default: '',
@@ -232,8 +232,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'invoicingStatus',
 			displayName: 'Invoicing Status',
+			name: 'invoicingStatus',
 			description: 'Invoicing status of the ticket',
 			type: 'options',
 			default: 'INVOICED',
@@ -259,8 +259,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'isTemplate',
 			displayName: 'Is Template',
+			name: 'isTemplate',
 			description: 'Whether the ticket is a template',
 			type: 'boolean',
 			default: false,
@@ -272,8 +272,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'language',
 			displayName: 'Language',
+			name: 'language',
 			description: 'Language of the ticket',
 			type: 'string',
 			typeOptions: {
@@ -289,8 +289,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'lastName',
 			displayName: 'Last Name',
+			name: 'lastName',
 			description: 'Last name of the ticket contact',
 			type: 'string',
 			typeOptions: {
@@ -306,8 +306,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'legacyArticleId',
 			displayName: 'Legacy Article ID',
+			name: 'legacyArticleId',
 			description: 'ID of the legacy article associated with the ticket',
 			type: 'string',
 			default: '',
@@ -320,8 +320,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'legacyTimeAndMaterialTicket',
 			displayName: 'Legacy Time and Material Ticket',
+			name: 'legacyTimeAndMaterialTicket',
 			description: 'Whether the ticket is a legacy time and material ticket',
 			type: 'boolean',
 			default: false,
@@ -333,8 +333,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'mail2TicketId',
 			displayName: 'Mail2Ticket ID',
+			name: 'mail2TicketId',
 			description: 'ID of the mail-to-ticket record associated with the ticket',
 			type: 'string',
 			default: '',
@@ -347,8 +347,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'mobilePhoneNumber',
 			displayName: 'Mobile Phone Number',
+			name: 'mobilePhoneNumber',
 			description: 'Mobile phone number of the ticket contact',
 			type: 'string',
 			typeOptions: {
@@ -364,8 +364,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'note',
 			displayName: 'Note',
+			name: 'note',
 			description: 'Internal note for the ticket',
 			type: 'string',
 			typeOptions: {
@@ -382,8 +382,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'partyId',
 			displayName: 'Party ID',
+			name: 'partyId',
 			description: 'ID of the party associated with the ticket',
 			type: 'string',
 			default: '',
@@ -396,8 +396,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'performanceRecordedStatus',
 			displayName: 'Performance Recorded Status',
+			name: 'performanceRecordedStatus',
 			description: 'Performance recording status of the ticket',
 			type: 'options',
 			default: 'NOT_PERFORMANCE_RECORDABLE',
@@ -427,8 +427,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'phoneNumber',
 			displayName: 'Phone Number',
+			name: 'phoneNumber',
 			description: 'Phone number of the ticket contact',
 			type: 'string',
 			typeOptions: {
@@ -444,8 +444,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'responsibleUserId',
 			displayName: 'Responsible User ID',
+			name: 'responsibleUserId',
 			description: 'ID of the user responsible for the ticket',
 			type: 'string',
 			default: '',
@@ -458,8 +458,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'room',
 			displayName: 'Room',
+			name: 'room',
 			description: 'Room associated with the ticket',
 			type: 'string',
 			typeOptions: {
@@ -475,8 +475,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'solutionDueDate',
 			displayName: 'Solution Due Date',
+			name: 'solutionDueDate',
 			description: 'Date by which the ticket should be resolved',
 			type: 'dateTime',
 			default: '',
@@ -489,8 +489,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'subject',
 			displayName: 'Subject',
+			name: 'subject',
 			description: 'Subject of the ticket',
 			type: 'string',
 			typeOptions: {
@@ -506,8 +506,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'tags',
 			displayName: 'Tags',
+			name: 'tags',
 			description: 'Tags assigned to the ticket',
 			type: 'fixedCollection',
 			typeOptions: {
@@ -517,12 +517,12 @@ export const createUpdateProperties: INodeProperties = {
 			placeholder: 'Add Tag',
 			options: [
 				{
-					name: 'items',
 					displayName: 'Tag',
+					name: 'items',
 					values: [
 						{
-							name: 'tag',
 							displayName: 'Tag',
+							name: 'tag',
 							description: 'Tag to add to the ticket',
 							type: 'string',
 							default: '',
@@ -539,8 +539,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'ticketCategoryId',
 			displayName: 'Ticket Category ID',
+			name: 'ticketCategoryId',
 			description: 'ID of the ticket category',
 			type: 'string',
 			default: '',
@@ -553,8 +553,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'ticketChannelId',
 			displayName: 'Ticket Channel ID',
+			name: 'ticketChannelId',
 			description: 'ID of the ticket channel',
 			type: 'string',
 			default: '',
@@ -567,8 +567,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'ticketNumber',
 			displayName: 'Ticket Number',
+			name: 'ticketNumber',
 			description: 'Ticket number',
 			type: 'string',
 			typeOptions: {
@@ -584,8 +584,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'ticketPriorityId',
 			displayName: 'Ticket Priority ID',
+			name: 'ticketPriorityId',
 			description: 'ID of the ticket priority',
 			type: 'string',
 			default: '',
@@ -598,8 +598,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'ticketRating',
 			displayName: 'Ticket Rating',
+			name: 'ticketRating',
 			description: 'Rating assigned to the ticket',
 			type: 'options',
 			default: 'STARS_1',
@@ -633,8 +633,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'ticketServiceLevelAgreementId',
 			displayName: 'Ticket Service Level Agreement ID',
+			name: 'ticketServiceLevelAgreementId',
 			description: 'ID of the service level agreement for the ticket',
 			type: 'string',
 			default: '',
@@ -647,8 +647,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'ticketStatusId',
 			displayName: 'Ticket Status ID',
+			name: 'ticketStatusId',
 			description: 'ID of the ticket status',
 			type: 'string',
 			default: '',
@@ -661,8 +661,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'ticketTypeId',
 			displayName: 'Ticket Type ID',
+			name: 'ticketTypeId',
 			description: 'ID of the ticket type',
 			type: 'string',
 			default: '',
@@ -675,8 +675,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'watchers',
 			displayName: 'Watchers',
+			name: 'watchers',
 			description: 'Watchers assigned to the ticket as a JSON array',
 			type: 'json',
 			default: '[]',

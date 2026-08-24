@@ -8,8 +8,8 @@ import * as update from './update.operation';
 
 export const description: INodeProperties[] = [
 	{
-		name: 'operation',
 		displayName: 'Operation',
+		name: 'operation',
 		type: 'options',
 		default: 'count',
 		noDataExpression: true,

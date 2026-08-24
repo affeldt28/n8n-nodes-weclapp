@@ -4,8 +4,8 @@ import { propertiesQueryParameter } from './properties';
 import { serializeNullsQueryParameter } from './serializeNulls';
 
 export const optionsQueryParameter: INodeProperties = {
-	name: 'options',
 	displayName: 'Options',
+	name: 'options',
 	type: 'collection',
 	default: {},
 	placeholder: 'Add Option',

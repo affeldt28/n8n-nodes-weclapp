@@ -53,8 +53,8 @@ const advancedOperators = [
 
 export const filterQueryParameters: INodeProperties[] = [
 	{
-		name: 'filterMode',
 		displayName: 'Filter Mode',
+		name: 'filterMode',
 		type: 'options',
 		default: 'basic',
 		options: [
@@ -76,9 +76,10 @@ export const filterQueryParameters: INodeProperties[] = [
 		},
 	},
 	{
-		name: 'filters',
 		displayName: 'Filters',
-		description: 'Use the weclapp property name, including nested properties such as customAttribute3387.value, as the left value',
+		name: 'filters',
+		description:
+			'Use the weclapp property name, including nested properties such as customAttribute3387.value, as the left value',
 		type: 'filter',
 		typeOptions: {
 			filter: {
@@ -97,9 +98,9 @@ export const filterQueryParameters: INodeProperties[] = [
 		},
 	},
 	{
-		name: 'advancedFiltersNotice',
 		displayName:
 			'Use weclapp filter syntax for advanced filters. See the <a href="https://www.weclapp.com/api/#overview--filtering" target="_blank">weclapp filtering documentation</a> for supported operators and examples.',
+		name: 'advancedFiltersNotice',
 		type: 'notice',
 		default: '',
 		displayOptions: {
@@ -109,8 +110,8 @@ export const filterQueryParameters: INodeProperties[] = [
 		},
 	},
 	{
-		name: 'advancedFilters',
 		displayName: 'Advanced Filters',
+		name: 'advancedFilters',
 		type: 'fixedCollection',
 		typeOptions: {
 			multipleValues: true,
@@ -124,12 +125,12 @@ export const filterQueryParameters: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'conditions',
 				displayName: 'Condition',
+				name: 'conditions',
 				values: [
 					{
-						name: 'property',
 						displayName: 'Property',
+						name: 'property',
 						description:
 							'weclapp property to filter, including nested properties such as customAttribute3387.value',
 						type: 'string',
@@ -138,15 +139,15 @@ export const filterQueryParameters: INodeProperties[] = [
 						required: true,
 					},
 					{
-						name: 'operator',
 						displayName: 'Operator',
+						name: 'operator',
 						type: 'options',
 						default: 'eq',
 						options: advancedOperators,
 					},
 					{
-						name: 'value',
 						displayName: 'Value',
+						name: 'value',
 						description:
 							'For In and Not In, enter a JSON array such as ["1006","1007"]',
 						type: 'string',
@@ -158,8 +159,8 @@ export const filterQueryParameters: INodeProperties[] = [
 						},
 					},
 					{
-						name: 'combination',
 						displayName: 'Combine With',
+						name: 'combination',
 						type: 'options',
 						default: 'and',
 						options: [
@@ -178,8 +179,8 @@ export const filterQueryParameters: INodeProperties[] = [
 						],
 					},
 					{
-						name: 'groupName',
 						displayName: 'OR Group Name',
+						name: 'groupName',
 						description:
 							'Conditions with the same group name are ORed together; separate groups are ANDed',
 						type: 'string',

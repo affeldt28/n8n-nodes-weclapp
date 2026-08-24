@@ -4,9 +4,9 @@ import * as query from './query.operation';
 
 export const description: INodeProperties[] = [
 	{
-		name: 'recurringInvoiceCaution',
 		displayName:
 			"Caution: This is an unofficial implementation of the weclapp API. The following operations are implemented. But it's not officially documented in the weclapp API documentation. Use at your own risk.",
+		name: 'recurringInvoiceCaution',
 		type: 'notice',
 		default: '',
 		displayOptions: {
@@ -16,8 +16,8 @@ export const description: INodeProperties[] = [
 		},
 	},
 	{
-		name: 'operation',
 		displayName: 'Operation',
+		name: 'operation',
 		type: 'options',
 		default: 'count',
 		noDataExpression: true,

@@ -1,8 +1,8 @@
 import { INodeProperties } from 'n8n-workflow';
 
 export const sortQueryParameter: INodeProperties = {
-	name: 'sort',
 	displayName: 'Sorting',
+	name: 'sort',
 	type: 'fixedCollection',
 	typeOptions: {
 		multipleValues: true,
@@ -11,20 +11,20 @@ export const sortQueryParameter: INodeProperties = {
 	placeholder: 'Add Sort',
 	options: [
 		{
-			name: 'criteria',
 			displayName: 'Sort',
+			name: 'criteria',
 			values: [
 				{
-					name: 'property',
 					displayName: 'Property',
+					name: 'property',
 					type: 'string',
 					default: '',
 					placeholder: 'e.g. lastModifiedDate',
 					required: true,
 				},
 				{
-					name: 'direction',
 					displayName: 'Direction',
+					name: 'direction',
 					type: 'options',
 					default: 'asc',
 					options: [

@@ -1,8 +1,8 @@
 import { INodeProperties } from 'n8n-workflow';
 
 export const webhookIdParameter: INodeProperties = {
-	name: 'webhookId',
 	displayName: 'Webhook ID',
+	name: 'webhookId',
 	type: 'resourceLocator',
 	default: {
 		mode: 'id',
@@ -20,15 +20,15 @@ export const webhookIdParameter: INodeProperties = {
 };
 
 export const createUpdateProperties: INodeProperties = {
-	name: 'attributes',
 	displayName: 'Attributes',
+	name: 'attributes',
 	type: 'collection',
 	default: {},
 	placeholder: 'Add Attribute',
 	options: [
 		{
-			name: 'atCreate',
 			displayName: 'At Create',
+			name: 'atCreate',
 			description: 'If true, the webhook will be triggered when the resource is created.',
 			type: 'boolean',
 			default: false,
@@ -40,8 +40,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'atDelete',
 			displayName: 'At Delete',
+			name: 'atDelete',
 			description: 'If true, the webhook will be triggered when the resource is deleted.',
 			type: 'boolean',
 			default: false,
@@ -53,8 +53,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'atUpdate',
 			displayName: 'At Update',
+			name: 'atUpdate',
 			description: 'If true, the webhook will be triggered when the resource is updated.',
 			type: 'boolean',
 			default: false,
@@ -66,8 +66,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'deactivatedDate',
 			displayName: 'Deactivated Date',
+			name: 'deactivatedDate',
 			description: 'The date when the resource was deactivated.',
 			type: 'dateTime',
 			default: '',
@@ -80,8 +80,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'entityName',
 			displayName: 'Entity Name',
+			name: 'entityName',
 			description: 'Name of the entity',
 			type: 'string',
 			typeOptions: {
@@ -97,8 +97,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'errorMessage',
 			displayName: 'Error Message',
+			name: 'errorMessage',
 			description: 'Message describing the error',
 			type: 'string',
 			typeOptions: {
@@ -114,8 +114,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'requestMethod',
 			displayName: 'Request Method',
+			name: 'requestMethod',
 			description: 'The HTTP method for the request',
 			type: 'options',
 			default: 'GET',
@@ -137,8 +137,8 @@ export const createUpdateProperties: INodeProperties = {
 			},
 		},
 		{
-			name: 'url',
 			displayName: 'URL',
+			name: 'url',
 			description: 'The URL to which the webhook will be sent',
 			type: 'string',
 			typeOptions: {

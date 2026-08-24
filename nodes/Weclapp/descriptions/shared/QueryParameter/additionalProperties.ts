@@ -9,8 +9,8 @@ import type {
  * @deprecated ⚠️ UNTESTED: This function is not tested and may not work as expected. Use with caution.
  */
 export const additionalPropertiesQueryParameter: INodeProperties = {
-	name: 'additionalProperties',
 	displayName: 'Additional Properties',
+	name: 'additionalProperties',
 	type: 'fixedCollection',
 	typeOptions: {
 		multipleValues: true,
@@ -19,12 +19,12 @@ export const additionalPropertiesQueryParameter: INodeProperties = {
 	placeholder: 'Add Additional Property',
 	options: [
 		{
-			name: 'items',
 			displayName: 'Additional Property',
+			name: 'items',
 			values: [
 				{
-					name: 'property',
 					displayName: 'Property Name',
+					name: 'property',
 					description:
 						'Additional calculated or complex property to include in the response',
 					type: 'string',

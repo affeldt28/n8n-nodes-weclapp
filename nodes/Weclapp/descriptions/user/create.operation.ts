@@ -5,15 +5,15 @@ import { dryRunQueryParameter } from '../shared/QueryParameter';
 const properties: INodeProperties[] = [
 	dryRunQueryParameter,
 	{
-		name: 'attributes',
 		displayName: 'Attributes',
+		name: 'attributes',
 		type: 'collection',
 		default: {},
 		placeholder: 'Add Attribute',
 		options: [
 			{
-				name: 'username',
 				displayName: 'Username',
+				name: 'username',
 				description: 'Username of the user',
 				type: 'string',
 				default: '',
@@ -26,8 +26,8 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				name: 'firstName',
 				displayName: 'First Name',
+				name: 'firstName',
 				description: 'The first name of the user',
 				type: 'string',
 				typeOptions: {
@@ -43,8 +43,8 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				name: 'lastName',
 				displayName: 'Last Name',
+				name: 'lastName',
 				description: 'The last name of the user',
 				type: 'string',
 				typeOptions: {
@@ -60,8 +60,8 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				name: 'title',
 				displayName: 'Title',
+				name: 'title',
 				description: 'Title of the user',
 				type: 'string',
 				typeOptions: {
@@ -77,8 +77,8 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				name: 'birthDate',
 				displayName: 'Birth Date',
+				name: 'birthDate',
 				description: 'Birth date of the user',
 				type: 'dateTime',
 				typeOptions: {
@@ -94,8 +94,8 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				name: 'imageId',
 				displayName: 'Image ID',
+				name: 'imageId',
 				description: 'ID of the image of the user',
 				type: 'string',
 				default: '',
@@ -108,8 +108,8 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				name: 'email',
 				displayName: 'Email',
+				name: 'email',
 				description: 'Email address of the user',
 				type: 'string',
 				default: '',
@@ -122,8 +122,8 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				name: 'phoneNumber',
 				displayName: 'Phone Number',
+				name: 'phoneNumber',
 				description: 'Phone number of the user',
 				type: 'string',
 				typeOptions: {
@@ -139,8 +139,8 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				name: 'mobilePhoneNumber',
 				displayName: 'Mobile Phone Number',
+				name: 'mobilePhoneNumber',
 				description: 'Mobile phone number of the user',
 				type: 'string',
 				typeOptions: {
@@ -156,8 +156,8 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				name: 'faxNumber',
 				displayName: 'Fax Number',
+				name: 'faxNumber',
 				description: 'Fax number of the user',
 				type: 'string',
 				typeOptions: {
@@ -173,8 +173,8 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				name: 'status',
 				displayName: 'Status',
+				name: 'status',
 				description: 'Status of the user',
 				type: 'options',
 				default: 'ACTIVE',
@@ -200,8 +200,8 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				name: 'licenses',
 				displayName: 'Licenses',
+				name: 'licenses',
 				description: 'Licenses assigned to the user as a JSON array',
 				type: 'json',
 				default: '[]',
@@ -214,8 +214,8 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				name: 'userRoles',
 				displayName: 'User Roles',
+				name: 'userRoles',
 				description: 'User roles as a JSON array',
 				type: 'json',
 				default: '[]',

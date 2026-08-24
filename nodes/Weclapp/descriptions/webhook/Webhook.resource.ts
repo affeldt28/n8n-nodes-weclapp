@@ -8,9 +8,9 @@ import * as update from './update.operation';
 
 export const description: INodeProperties[] = [
 	{
-		name: 'operation',
 		displayName: 'Operation',
 		type: 'options',
+		name: 'operation',
 		default: 'count',
 		noDataExpression: true,
 		displayOptions: {

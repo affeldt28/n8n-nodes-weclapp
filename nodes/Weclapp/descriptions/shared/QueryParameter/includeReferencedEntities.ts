@@ -1,8 +1,8 @@
 import type { INodeProperties } from 'n8n-workflow';
 
 export const includeReferencedEntitiesQueryParameter: INodeProperties = {
-	name: 'includeReferencedEntities',
 	displayName: 'Include Referenced Entities',
+	name: 'includeReferencedEntities',
 	type: 'fixedCollection',
 	typeOptions: {
 		multipleValues: true,
@@ -11,12 +11,12 @@ export const includeReferencedEntitiesQueryParameter: INodeProperties = {
 	placeholder: 'Add Referenced Entity',
 	options: [
 		{
-			name: 'entity',
 			displayName: 'Referenced Entity',
+			name: 'entity',
 			values: [
 				{
-					name: 'name',
 					displayName: 'Entity Name',
+					name: 'name',
 					type: 'string',
 					default: '',
 					placeholder: 'e.g. customer',

@@ -2,15 +2,15 @@ import { INodeProperties } from 'n8n-workflow';
 
 export const paginationQueryParameters: INodeProperties[] = [
 	{
-		name: 'usePagination',
 		displayName: 'Use Pagination',
+		name: 'usePagination',
 		description: 'Whether to use pagination for the request',
 		type: 'boolean',
 		default: false,
 	},
 	{
-		name: 'page',
 		displayName: 'Page',
+		name: 'page',
 		description: 'The page number to retrieve',
 		type: 'number',
 		typeOptions: {
@@ -31,8 +31,8 @@ export const paginationQueryParameters: INodeProperties[] = [
 		},
 	},
 	{
-		name: 'pageSize',
 		displayName: 'Page Size',
+		name: 'pageSize',
 		description: 'The number of items to retrieve per page',
 		type: 'number',
 		typeOptions: {
@@ -54,8 +54,8 @@ export const paginationQueryParameters: INodeProperties[] = [
 		},
 	},
 	{
-		name: 'offset',
 		displayName: 'Offset',
+		name: 'offset',
 		description: 'The number of items to skip before starting to collect the result set',
 		type: 'number',
 		typeOptions: {

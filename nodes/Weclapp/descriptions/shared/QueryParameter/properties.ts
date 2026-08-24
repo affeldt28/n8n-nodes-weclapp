@@ -1,8 +1,8 @@
 import type { INodeProperties } from 'n8n-workflow';
 
 export const propertiesQueryParameter: INodeProperties = {
-	name: 'properties',
 	displayName: 'Properties',
+	name: 'properties',
 	type: 'fixedCollection',
 	typeOptions: {
 		multipleValues: true,
@@ -11,12 +11,12 @@ export const propertiesQueryParameter: INodeProperties = {
 	placeholder: 'Add Property',
 	options: [
 		{
-			name: 'items',
 			displayName: 'Property',
+			name: 'items',
 			values: [
 				{
-					name: 'property',
 					displayName: 'Property Path',
+					name: 'property',
 					description: 'Property or nested property path to include in the response',
 					type: 'string',
 					default: '',

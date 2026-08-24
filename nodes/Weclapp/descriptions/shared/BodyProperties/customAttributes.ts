@@ -1,8 +1,8 @@
 import { INodeProperties } from 'n8n-workflow';
 
 export const customAttributesBodyProperties: INodeProperties = {
-	name: 'customAttributes',
 	displayName: 'Custom Attributes',
+	name: 'customAttributes',
 	type: 'fixedCollection',
 	typeOptions: {
 		multipleValues: true,
@@ -11,20 +11,20 @@ export const customAttributesBodyProperties: INodeProperties = {
 	placeholder: 'Add Custom Attribute',
 	options: [
 		{
-			name: 'customAttribute',
 			displayName: 'Custom Attribute',
+			name: 'customAttribute',
 			values: [
 				{
-					name: 'attributeDefinitionId',
 					displayName: 'Attribute Definition ID',
+					name: 'attributeDefinitionId',
 					description: 'ID of the custom attribute definition',
 					type: 'string',
 					default: '',
 					placeholder: 'e.g. 12345',
 				},
 				{
-					name: 'dataType',
 					displayName: 'Data Type',
+					name: 'dataType',
 					description: 'Type of custom attribute value to send',
 					type: 'options',
 					default: 'stringValue',
@@ -64,8 +64,8 @@ export const customAttributesBodyProperties: INodeProperties = {
 					],
 				},
 				{
-					name: 'booleanValue',
 					displayName: 'Boolean Value',
+					name: 'booleanValue',
 					description: 'Boolean value of the custom attribute',
 					type: 'boolean',
 					default: false,
@@ -76,8 +76,8 @@ export const customAttributesBodyProperties: INodeProperties = {
 					},
 				},
 				{
-					name: 'dateValue',
 					displayName: 'Date Value',
+					name: 'dateValue',
 					description: 'Date value as an integer timestamp',
 					type: 'number',
 					default: '',
@@ -89,8 +89,8 @@ export const customAttributesBodyProperties: INodeProperties = {
 					},
 				},
 				{
-					name: 'entityId',
 					displayName: 'Entity ID',
+					name: 'entityId',
 					description: 'ID of the referenced entity',
 					type: 'string',
 					default: '',
@@ -102,8 +102,8 @@ export const customAttributesBodyProperties: INodeProperties = {
 					},
 				},
 				{
-					name: 'entityReferences',
 					displayName: 'Entity References',
+					name: 'entityReferences',
 					description:
 						'Entity references as a JSON array of objects containing entityId and entityName',
 					type: 'json',
@@ -116,8 +116,8 @@ export const customAttributesBodyProperties: INodeProperties = {
 					},
 				},
 				{
-					name: 'numberValue',
 					displayName: 'Number Value',
+					name: 'numberValue',
 					description: 'Decimal value of the custom attribute',
 					type: 'number',
 					default: '',
@@ -129,8 +129,8 @@ export const customAttributesBodyProperties: INodeProperties = {
 					},
 				},
 				{
-					name: 'selectedValueId',
 					displayName: 'Selected Value ID',
+					name: 'selectedValueId',
 					description: 'ID of the selected custom attribute value',
 					type: 'string',
 					default: '',
@@ -142,8 +142,8 @@ export const customAttributesBodyProperties: INodeProperties = {
 					},
 				},
 				{
-					name: 'selectedValues',
 					displayName: 'Selected Values',
+					name: 'selectedValues',
 					description: 'Selected values as a JSON array',
 					type: 'json',
 					default: '',
@@ -155,8 +155,8 @@ export const customAttributesBodyProperties: INodeProperties = {
 					},
 				},
 				{
-					name: 'stringValue',
 					displayName: 'String Value',
+					name: 'stringValue',
 					description: 'String value of the custom attribute',
 					type: 'string',
 					default: '',
