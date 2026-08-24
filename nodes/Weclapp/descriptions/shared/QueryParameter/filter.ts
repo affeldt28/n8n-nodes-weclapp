@@ -78,8 +78,7 @@ export const filterQueryParameters: INodeProperties[] = [
 	{
 		name: 'filters',
 		displayName: 'Filters',
-		description:
-			'Use the weclapp property name, including nested properties such as customAttribute3387.value, as the left value.',
+		description: 'Use the weclapp property name, including nested properties such as customAttribute3387.value, as the left value',
 		type: 'filter',
 		typeOptions: {
 			filter: {
@@ -116,7 +115,7 @@ export const filterQueryParameters: INodeProperties[] = [
 		typeOptions: {
 			multipleValues: true,
 		},
-		default: '',
+		default: {},
 		placeholder: 'Add Filter',
 		displayOptions: {
 			show: {

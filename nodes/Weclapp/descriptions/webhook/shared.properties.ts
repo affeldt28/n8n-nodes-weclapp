@@ -118,7 +118,7 @@ export const createUpdateProperties: INodeProperties = {
 			displayName: 'Request Method',
 			description: 'The HTTP method for the request',
 			type: 'options',
-			default: '',
+			default: 'GET',
 			options: [
 				{
 					name: 'GET',

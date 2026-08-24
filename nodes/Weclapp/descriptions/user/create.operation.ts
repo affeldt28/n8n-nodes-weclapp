@@ -177,7 +177,7 @@ const properties: INodeProperties[] = [
 				displayName: 'Status',
 				description: 'Status of the user',
 				type: 'options',
-				default: '',
+				default: 'ACTIVE',
 				options: [
 					{
 						name: 'Active',

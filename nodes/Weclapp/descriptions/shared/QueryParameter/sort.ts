@@ -7,7 +7,7 @@ export const sortQueryParameter: INodeProperties = {
 	typeOptions: {
 		multipleValues: true,
 	},
-	default: '',
+	default: {},
 	placeholder: 'Add Sort',
 	options: [
 		{

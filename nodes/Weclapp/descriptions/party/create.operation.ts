@@ -439,7 +439,7 @@ const properties: INodeProperties[] = [
 				options: [
 					{
 						name: 'onlineAccount',
-						displayName: 'Online account',
+						displayName: 'Online Account',
 						values: [
 							{
 								name: 'accountType',
@@ -557,7 +557,7 @@ const properties: INodeProperties[] = [
 				typeOptions: {
 					multipleValues: true,
 				},
-				default: '',
+				default: {},
 				placeholder: 'Add Tag',
 				options: [
 					{
@@ -609,7 +609,7 @@ const properties: INodeProperties[] = [
 				typeOptions: {
 					multipleValues: true,
 				},
-				default: '',
+				default: {},
 				placeholder: 'Add Bank Account',
 				options: [
 					{
@@ -698,7 +698,7 @@ const properties: INodeProperties[] = [
 				typeOptions: {
 					multipleValues: true,
 				},
-				default: '',
+				default: {},
 				placeholder: 'Add Sales Partner',
 				options: [
 					{
@@ -724,7 +724,7 @@ const properties: INodeProperties[] = [
 								displayName: 'Commission Type',
 								description: 'Type of commission for the sales partner',
 								type: 'options',
-								default: '',
+								default: 'FIX',
 								options: [
 									{
 										name: 'Fix',
@@ -843,7 +843,7 @@ const properties: INodeProperties[] = [
 				displayName: 'Customer Business Type',
 				description: 'Business type of the customer',
 				type: 'options',
-				default: '',
+				default: 'B2B',
 				options: [
 					{
 						name: 'B2B',
@@ -1020,7 +1020,7 @@ const properties: INodeProperties[] = [
 				displayName: 'Customer Sales Order Payment Type',
 				description: 'Sales order payment type of the customer',
 				type: 'options',
-				default: '',
+				default: 'ADVANCE_PAYMENT',
 				options: [
 					{
 						name: 'Advance Payment',
@@ -1056,7 +1056,7 @@ const properties: INodeProperties[] = [
 				displayName: 'Customer Satisfaction',
 				description: 'Satisfaction of the customer',
 				type: 'options',
-				default: '',
+				default: 'NEUTRAL',
 				options: [
 					{
 						name: 'Neutral',
@@ -1235,7 +1235,7 @@ const properties: INodeProperties[] = [
 				displayName: 'Lead Status',
 				description: 'Lead status of the party',
 				type: 'options',
-				default: '',
+				default: 'CONVERTED',
 				options: [
 					{
 						name: 'Converted',
@@ -1447,7 +1447,7 @@ const properties: INodeProperties[] = [
 				displayName: 'Sales Partner Default Commission Type',
 				description: 'Default commission type for the sales partner',
 				type: 'options',
-				default: '',
+				default: 'FIX',
 				options: [
 					{
 						name: 'Fix',

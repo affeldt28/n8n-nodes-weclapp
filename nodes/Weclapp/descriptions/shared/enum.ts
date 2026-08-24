@@ -229,7 +229,7 @@ export const COUNTRY_CODES: INodePropertyOptions[] = [
 	{ value: 'SX', name: 'Sint Maarten' },
 	{ value: 'SY', name: 'Syria' },
 	{ value: 'SZ', name: 'Eswatini' },
-	{ value: 'TA', name: 'Tristan da Cunha' },
+	{ value: 'TA', name: 'Tristan Da Cunha' },
 	{ value: 'TC', name: 'Turks and Caicos Islands' },
 	{ value: 'TD', name: 'Chad' },
 	{ value: 'TF', name: 'French Southern Territories' },

@@ -15,7 +15,7 @@ export const additionalPropertiesQueryParameter: INodeProperties = {
 	typeOptions: {
 		multipleValues: true,
 	},
-	default: '',
+	default: {},
 	placeholder: 'Add Additional Property',
 	options: [
 		{

@@ -236,7 +236,7 @@ export const createUpdateProperties: INodeProperties = {
 			displayName: 'Invoicing Status',
 			description: 'Invoicing status of the ticket',
 			type: 'options',
-			default: '',
+			default: 'INVOICED',
 			options: [
 				{
 					name: 'Invoiced',
@@ -400,7 +400,7 @@ export const createUpdateProperties: INodeProperties = {
 			displayName: 'Performance Recorded Status',
 			description: 'Performance recording status of the ticket',
 			type: 'options',
-			default: '',
+			default: 'NOT_PERFORMANCE_RECORDABLE',
 			options: [
 				{
 					name: 'Not Performance Recordable',
@@ -602,7 +602,7 @@ export const createUpdateProperties: INodeProperties = {
 			displayName: 'Ticket Rating',
 			description: 'Rating assigned to the ticket',
 			type: 'options',
-			default: '',
+			default: 'STARS_1',
 			options: [
 				{
 					name: '1 Star',
