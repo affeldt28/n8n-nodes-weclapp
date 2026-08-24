@@ -7,11 +7,11 @@ import type {
 } from 'n8n-workflow';
 
 export class WeclappApi implements ICredentialType {
-	name = 'weclappApi';
-
 	displayName = 'Weclapp API';
 
-	icon: Icon = { light: 'file:../icons/weclapp.svg', dark: 'file:../icons/weclapp.svg' };
+	name = 'weclappApi';
+
+	icon: Icon = 'file:../icons/weclapp.svg';
 
 	documentationUrl = 'https://www.weclapp.com/api/#overview--security-and-authentication';
 

@@ -20,16 +20,16 @@ export const description: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Get Many',
-				description: 'Retrieve a list of webhooks',
-				value: 'query',
+				name: 'Count',
+				description: 'Count webhooks',
+				value: 'count',
 				routing: {
 					request: {
 						method: 'GET',
-						url: '/webhook',
+						url: '/webhook/count',
 					},
 				},
-				action: 'Get many webhooks',
+				action: 'Count webhooks',
 			},
 			{
 				name: 'Create',
@@ -44,16 +44,16 @@ export const description: INodeProperties[] = [
 				action: 'Create a webhook',
 			},
 			{
-				name: 'Count',
-				description: 'Count webhooks',
-				value: 'count',
+				name: 'Delete',
+				description: 'Delete a webhook',
+				value: 'delete',
 				routing: {
 					request: {
-						method: 'GET',
-						url: '/webhook/count',
+						method: 'DELETE',
+						url: '=/webhook/id/{{ $parameter.webhookId.value }}',
 					},
 				},
-				action: 'Count webhooks',
+				action: 'Delete a webhook',
 			},
 			{
 				name: 'Get',
@@ -68,6 +68,18 @@ export const description: INodeProperties[] = [
 				action: 'Get webhook',
 			},
 			{
+				name: 'Get Many',
+				description: 'Retrieve a list of webhooks',
+				value: 'query',
+				routing: {
+					request: {
+						method: 'GET',
+						url: '/webhook',
+					},
+				},
+				action: 'Get many webhooks',
+			},
+			{
 				name: 'Update',
 				description: 'Update a webhook',
 				value: 'update',
@@ -78,18 +90,6 @@ export const description: INodeProperties[] = [
 					},
 				},
 				action: 'Update a webhook',
-			},
-			{
-				name: 'Delete',
-				description: 'Delete a webhook',
-				value: 'delete',
-				routing: {
-					request: {
-						method: 'DELETE',
-						url: '=/webhook/id/{{ $parameter.webhookId.value }}',
-					},
-				},
-				action: 'Delete a webhook',
 			},
 		],
 	},

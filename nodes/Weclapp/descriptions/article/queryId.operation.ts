@@ -2,8 +2,8 @@ import { type INodeProperties, updateDisplayOptions } from 'n8n-workflow';
 
 const properties: INodeProperties[] = [
 	{
-		name: 'articleId',
 		displayName: 'Article ID',
+		name: 'articleId',
 		type: 'resourceLocator',
 		default: {
 			mode: 'id',

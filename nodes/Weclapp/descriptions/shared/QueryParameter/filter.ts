@@ -34,23 +34,6 @@ const basicOperatorMap: Record<string, string> = {
 	notEquals: 'ne',
 };
 
-const advancedOperators = [
-	{ name: 'Equal', value: 'eq' },
-	{ name: 'Not Equal', value: 'ne' },
-	{ name: 'Less Than', value: 'lt' },
-	{ name: 'Greater Than', value: 'gt' },
-	{ name: 'Less Than or Equal', value: 'le' },
-	{ name: 'Greater Than or Equal', value: 'ge' },
-	{ name: 'Is Null', value: 'null' },
-	{ name: 'Is Not Null', value: 'notnull' },
-	{ name: 'Like', value: 'like' },
-	{ name: 'Not Like', value: 'notlike' },
-	{ name: 'Like (Case Insensitive)', value: 'ilike' },
-	{ name: 'Not Like (Case Insensitive)', value: 'notilike' },
-	{ name: 'In', value: 'in' },
-	{ name: 'Not In', value: 'notin' },
-];
-
 export const filterQueryParameters: INodeProperties[] = [
 	{
 		displayName: 'Filter Mode',
@@ -129,36 +112,6 @@ export const filterQueryParameters: INodeProperties[] = [
 				name: 'conditions',
 				values: [
 					{
-						displayName: 'Property',
-						name: 'property',
-						description:
-							'Weclapp property to filter, including nested properties such as customAttribute3387.value',
-						type: 'string',
-						default: '',
-						placeholder: 'e.g. createdDate',
-						required: true,
-					},
-					{
-						displayName: 'Operator',
-						name: 'operator',
-						type: 'options',
-						default: 'eq',
-						options: advancedOperators,
-					},
-					{
-						displayName: 'Value',
-						name: 'value',
-						description:
-							'For In and Not In, enter a JSON array such as ["1006","1007"]',
-						type: 'string',
-						default: '',
-						displayOptions: {
-							hide: {
-								operator: ['null', 'notnull'],
-							},
-						},
-					},
-					{
 						displayName: 'Combine With',
 						name: 'combination',
 						type: 'options',
@@ -179,18 +132,37 @@ export const filterQueryParameters: INodeProperties[] = [
 						],
 					},
 					{
+						displayName: 'Operator',
+						name: 'operator',
+						type: 'options',
+						default: '',
+					},
+					{
 						displayName: 'OR Group Name',
 						name: 'groupName',
 						description:
-							'Conditions with the same group name are ORed together; separate groups are ANDed',
+							'Conditions with the same group name are ORed together;	separate groups are ANDed',
 						type: 'string',
 						default: 'Group1',
 						required: true,
-						displayOptions: {
-							show: {
-								combination: ['orGroup'],
-							},
-						},
+					},
+					{
+						displayName: 'Property',
+						name: 'property',
+						description:
+							'Weclapp property to filter, including nested properties such as customAttribute3387.value',
+						type: 'string',
+						default: '',
+						placeholder: 'e.g. createdDate',
+						required: true,
+					},
+					{
+						displayName: 'Value',
+						name: 'value',
+						description:
+							"For In and Not In, enter a JSON array such as	['1006','1007']",
+						type: 'string',
+						default: '',
 					},
 				],
 			},

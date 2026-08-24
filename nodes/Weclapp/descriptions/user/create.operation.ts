@@ -12,16 +12,50 @@ const properties: INodeProperties[] = [
 		placeholder: 'Add Attribute',
 		options: [
 			{
-				displayName: 'Username',
-				name: 'username',
-				description: 'Username of the user',
-				type: 'string',
+				displayName: 'Birth Date',
+				name: 'birthDate',
+				description: 'Birth date of the user',
+				type: 'dateTime',
+				typeOptions: {
+					dateOnly: true,
+				},
 				default: '',
-				placeholder: 'e.g. jane.doe',
 				routing: {
 					send: {
 						type: 'body',
-						property: 'username',
+						property: 'birthDate',
+						value: '={{ Date.parse($value) }}',
+					},
+				},
+			},
+			{
+				displayName: 'Email',
+				name: 'email',
+				description: 'Email address of the user',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. jane.doe@example.com',
+				routing: {
+					send: {
+						type: 'body',
+						property: 'email',
+					},
+				},
+			},
+			{
+				displayName: 'Fax Number',
+				name: 'faxNumber',
+				description: 'Fax number of the user',
+				type: 'string',
+				typeOptions: {
+					maxLength: 100,
+				},
+				default: '',
+				placeholder: 'e.g. +49 30 12345678',
+				routing: {
+					send: {
+						type: 'body',
+						property: 'faxNumber',
 					},
 				},
 			},
@@ -43,6 +77,20 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
+				displayName: 'Image ID',
+				name: 'imageId',
+				description: 'ID of the image of the user',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. 12345',
+				routing: {
+					send: {
+						type: 'body',
+						property: 'imageId',
+					},
+				},
+			},
+			{
 				displayName: 'Last Name',
 				name: 'lastName',
 				description: 'The last name of the user',
@@ -60,81 +108,16 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'Title',
-				name: 'title',
-				description: 'Title of the user',
-				type: 'string',
-				typeOptions: {
-					maxLength: 1000,
-				},
-				default: '',
-				placeholder: 'e.g. Dr.',
+				displayName: 'Licenses',
+				name: 'licenses',
+				description: 'Licenses assigned to the user as a JSON array',
+				type: 'json',
+				default: '[]',
+				placeholder: 'e.g. ["CRM", "ERP"]',
 				routing: {
 					send: {
 						type: 'body',
-						property: 'title',
-					},
-				},
-			},
-			{
-				displayName: 'Birth Date',
-				name: 'birthDate',
-				description: 'Birth date of the user',
-				type: 'dateTime',
-				typeOptions: {
-					dateOnly: true,
-				},
-				default: '',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'birthDate',
-						value: '={{ Date.parse($value) }}',
-					},
-				},
-			},
-			{
-				displayName: 'Image ID',
-				name: 'imageId',
-				description: 'ID of the image of the user',
-				type: 'string',
-				default: '',
-				placeholder: 'e.g. 12345',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'imageId',
-					},
-				},
-			},
-			{
-				displayName: 'Email',
-				name: 'email',
-				description: 'Email address of the user',
-				type: 'string',
-				default: '',
-				placeholder: 'e.g. jane.doe@example.com',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'email',
-					},
-				},
-			},
-			{
-				displayName: 'Phone Number',
-				name: 'phoneNumber',
-				description: 'Phone number of the user',
-				type: 'string',
-				typeOptions: {
-					maxLength: 100,
-				},
-				default: '',
-				placeholder: 'e.g. +49 30 12345678',
-				routing: {
-					send: {
-						type: 'body',
-						property: 'phoneNumber',
+						property: 'licenses',
 					},
 				},
 			},
@@ -156,9 +139,9 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'Fax Number',
-				name: 'faxNumber',
-				description: 'Fax number of the user',
+				displayName: 'Phone Number',
+				name: 'phoneNumber',
+				description: 'Phone number of the user',
 				type: 'string',
 				typeOptions: {
 					maxLength: 100,
@@ -168,7 +151,7 @@ const properties: INodeProperties[] = [
 				routing: {
 					send: {
 						type: 'body',
-						property: 'faxNumber',
+						property: 'phoneNumber',
 					},
 				},
 			},
@@ -200,16 +183,19 @@ const properties: INodeProperties[] = [
 				},
 			},
 			{
-				displayName: 'Licenses',
-				name: 'licenses',
-				description: 'Licenses assigned to the user as a JSON array',
-				type: 'json',
-				default: '[]',
-				placeholder: 'e.g. ["CRM", "ERP"]',
+				displayName: 'Title',
+				name: 'title',
+				description: 'Title of the user',
+				type: 'string',
+				typeOptions: {
+					maxLength: 1000,
+				},
+				default: '',
+				placeholder: 'e.g. Dr.',
 				routing: {
 					send: {
 						type: 'body',
-						property: 'licenses',
+						property: 'title',
 					},
 				},
 			},
@@ -224,6 +210,20 @@ const properties: INodeProperties[] = [
 					send: {
 						type: 'body',
 						property: 'userRoles',
+					},
+				},
+			},
+			{
+				displayName: 'Username',
+				name: 'username',
+				description: 'Username of the user',
+				type: 'string',
+				default: '',
+				placeholder: 'e.g. jane.doe',
+				routing: {
+					send: {
+						type: 'body',
+						property: 'username',
 					},
 				},
 			},

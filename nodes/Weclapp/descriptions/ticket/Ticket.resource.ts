@@ -20,16 +20,16 @@ export const description: INodeProperties[] = [
 		},
 		options: [
 			{
-				name: 'Get Many',
-				description: 'Retrieve a list of tickets',
-				value: 'query',
+				name: 'Count',
+				description: 'Count tickets',
+				value: 'count',
 				routing: {
 					request: {
 						method: 'GET',
-						url: '/ticket',
+						url: '/ticket/count',
 					},
 				},
-				action: 'Get many tickets',
+				action: 'Count tickets',
 			},
 			{
 				name: 'Create',
@@ -44,16 +44,16 @@ export const description: INodeProperties[] = [
 				action: 'Create a ticket',
 			},
 			{
-				name: 'Count',
-				description: 'Count tickets',
-				value: 'count',
+				name: 'Delete',
+				description: 'Delete a ticket',
+				value: 'delete',
 				routing: {
 					request: {
-						method: 'GET',
-						url: '/ticket/count',
+						method: 'DELETE',
+						url: '=/ticket/id/{{ $parameter.ticketId.value }}',
 					},
 				},
-				action: 'Count tickets',
+				action: 'Delete a ticket',
 			},
 			{
 				name: 'Get',
@@ -68,6 +68,18 @@ export const description: INodeProperties[] = [
 				action: 'Get ticket',
 			},
 			{
+				name: 'Get Many',
+				description: 'Retrieve a list of tickets',
+				value: 'query',
+				routing: {
+					request: {
+						method: 'GET',
+						url: '/ticket',
+					},
+				},
+				action: 'Get many tickets',
+			},
+			{
 				name: 'Update',
 				description: 'Update a ticket',
 				value: 'update',
@@ -79,24 +91,12 @@ export const description: INodeProperties[] = [
 				},
 				action: 'Update a ticket',
 			},
-			{
-				name: 'Delete',
-				description: 'Delete a ticket',
-				value: 'delete',
-				routing: {
-					request: {
-						method: 'DELETE',
-						url: '=/ticket/id/{{ $parameter.ticketId.value }}',
-					},
-				},
-				action: 'Delete a ticket',
-			},
 		],
 	},
-	...query.description,
-	...create.description,
 	...count.description,
+	...create.description,
+	...delete_.description,
+	...query.description,
 	...queryId.description,
 	...update.description,
-	...delete_.description,
 ];

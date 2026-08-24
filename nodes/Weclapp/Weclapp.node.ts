@@ -5,7 +5,7 @@ export class Weclapp implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Weclapp',
 		name: 'weclapp',
-		icon: { light: 'file:../../icons/weclapp.svg', dark: 'file:../../icons/weclapp.svg' },
+		icon: 'file:../../icons/weclapp.svg',
 		group: ['input'],
 		subtitle: '={{ $parameter["operation"] + ": " + $parameter["resource"] }}',
 		version: 1,
@@ -33,24 +33,24 @@ export class Weclapp implements INodeType {
 				noDataExpression: true,
 				options: [
 					{
-						name: 'User',
-						value: 'user',
-					},
-					{
 						name: 'Article',
 						value: 'article',
-					},
-					{
-						name: 'Recurring Invoice',
-						value: 'recurringInvoice',
 					},
 					{
 						name: 'Party',
 						value: 'party',
 					},
 					{
+						name: 'Recurring Invoice',
+						value: 'recurringInvoice',
+					},
+					{
 						name: 'Ticket',
 						value: 'ticket',
+					},
+					{
+						name: 'User',
+						value: 'user',
 					},
 					{
 						name: 'Webhook',
@@ -63,8 +63,8 @@ export class Weclapp implements INodeType {
 			...article.description,
 			...party.description,
 			...recurringInvoice.description,
-			...user.description,
 			...ticket.description,
+			...user.description,
 			...webhook.description,
 		],
 	};

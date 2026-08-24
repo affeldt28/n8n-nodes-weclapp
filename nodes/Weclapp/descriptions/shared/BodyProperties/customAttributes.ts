@@ -23,6 +23,13 @@ export const customAttributesBodyProperties: INodeProperties = {
 					placeholder: 'e.g. 12345',
 				},
 				{
+					displayName: 'Boolean Value',
+					name: 'booleanValue',
+					description: 'Whether the custom attribute is true or false',
+					type: 'boolean',
+					default: false,
+				},
+				{
 					displayName: 'Data Type',
 					name: 'dataType',
 					description: 'Type of custom attribute value to send',
@@ -61,19 +68,7 @@ export const customAttributesBodyProperties: INodeProperties = {
 							name: 'String',
 							value: 'stringValue',
 						},
-					],
-				},
-				{
-					displayName: 'Boolean Value',
-					name: 'booleanValue',
-					description: 'Whether the custom attribute is true or false',
-					type: 'boolean',
-					default: false,
-					displayOptions: {
-						show: {
-							dataType: ['booleanValue'],
-						},
-					},
+					]
 				},
 				{
 					displayName: 'Date Value',
@@ -82,11 +77,6 @@ export const customAttributesBodyProperties: INodeProperties = {
 					type: 'number',
 					default: '',
 					placeholder: 'e.g. 1735689600000',
-					displayOptions: {
-						show: {
-							dataType: ['dateValue'],
-						},
-					},
 				},
 				{
 					displayName: 'Entity ID',
@@ -95,25 +85,14 @@ export const customAttributesBodyProperties: INodeProperties = {
 					type: 'string',
 					default: '',
 					placeholder: 'e.g. 12345',
-					displayOptions: {
-						show: {
-							dataType: ['entityId'],
-						},
-					},
 				},
 				{
 					displayName: 'Entity References',
 					name: 'entityReferences',
-					description:
-						'Entity references as a JSON array of objects containing entityId and entityName',
+					description: 'Entity references as a JSON array of objects containing entityId and entityName',
 					type: 'json',
 					default: '',
-					placeholder: 'e.g. [{"entityId":"12345","entityName":"Example"}]',
-					displayOptions: {
-						show: {
-							dataType: ['entityReferences'],
-						},
-					},
+					placeholder: 'e.g.	[{\'entityId\':\'12345\',\'entityName\':\'Example\'}]',
 				},
 				{
 					displayName: 'Number Value',
@@ -122,11 +101,6 @@ export const customAttributesBodyProperties: INodeProperties = {
 					type: 'number',
 					default: '',
 					placeholder: 'e.g. 42.5',
-					displayOptions: {
-						show: {
-							dataType: ['numberValue'],
-						},
-					},
 				},
 				{
 					displayName: 'Selected Value ID',
@@ -135,11 +109,6 @@ export const customAttributesBodyProperties: INodeProperties = {
 					type: 'string',
 					default: '',
 					placeholder: 'e.g. 12345',
-					displayOptions: {
-						show: {
-							dataType: ['selectedValueId'],
-						},
-					},
 				},
 				{
 					displayName: 'Selected Values',
@@ -147,12 +116,7 @@ export const customAttributesBodyProperties: INodeProperties = {
 					description: 'Selected values as a JSON array',
 					type: 'json',
 					default: '',
-					placeholder: 'e.g. [{}]',
-					displayOptions: {
-						show: {
-							dataType: ['selectedValues'],
-						},
-					},
+					placeholder: 'e.g.	[{}]',
 				},
 				{
 					displayName: 'String Value',
@@ -161,11 +125,6 @@ export const customAttributesBodyProperties: INodeProperties = {
 					type: 'string',
 					default: '',
 					placeholder: 'e.g. Example value',
-					displayOptions: {
-						show: {
-							dataType: ['stringValue'],
-						},
-					},
 				},
 			],
 		},
