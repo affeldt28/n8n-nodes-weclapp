@@ -1,6 +1,6 @@
 {
 	"name": "@affeldt28/n8n-nodes-weclapp",
-	"version": "1.2.0",
+	"version": "1.2.1",
 	"description": "n8n node for Weclapp",
 	"license": "MIT",
 	"homepage": "https://github.com/affeldt28/n8n-nodes-weclapp",
@@ -46,8 +46,8 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.5.2",
-		"@n8n/node-cli": "*",
+		"@biomejs/biome": "2.5.10",
+		"@n8n/node-cli": "0.44.5",
 		"release-it": "20.2.1",
 		"typescript": "6.0.3"
 	},
