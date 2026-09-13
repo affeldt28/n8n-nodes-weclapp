@@ -5,7 +5,7 @@ export class Weclapp implements INodeType {
 	description: INodeTypeDescription = {
 		displayName: 'Weclapp',
 		name: 'weclapp',
-		icon: 'file:../../icons/weclapp.svg',
+		icon: { light: 'file:../../icons/weclapp.svg', dark: 'file:../../icons/weclapp.dark.svg' },
 		group: ['input'],
 		subtitle: '={{ $parameter["operation"] + ": " + $parameter["resource"] }}',
 		version: 1,
