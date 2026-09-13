@@ -19,7 +19,6 @@
 		"url": "git+https://github.com/affeldt28/n8n-nodes-weclapp.git"
 	},
 	"scripts": {
-		"install:hook": "husky",
 		"build": "n8n-node build",
 		"build:watch": "tsc --watch",
 		"dev": "n8n-node dev",
@@ -49,7 +48,6 @@
 	"devDependencies": {
 		"@biomejs/biome": "2.5.11",
 		"@n8n/node-cli": "0.46.1",
-		"husky": "9.1.7",
 		"release-it": "20.2.1",
 		"typescript": "7.0.2"
 	},
