@@ -31,5 +31,8 @@ jobs:
       - name: 🔎 Run lint
         run: bun run lint
 
+      - name: 🔎 Run n8n community node lint
+        run: bun run n8n-lint
+
       - name: 🏗️ Run build
         run: bun run build
