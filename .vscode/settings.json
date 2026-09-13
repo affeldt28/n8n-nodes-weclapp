@@ -3,6 +3,7 @@
 		"source.organizeImports.biome": "explicit",
 		"source.fixAll.biome": "explicit"
 	},
+	"editor.defaultFormatter": "biomejs.biome",
 
 	"js/ts.referencesCodeLens.enabled": true,
 	"js/ts.referencesCodeLens.showOnAllFunctions": true,
