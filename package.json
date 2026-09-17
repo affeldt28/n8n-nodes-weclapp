@@ -47,8 +47,8 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.5.13",
-		"@n8n/node-cli": "0.47.2",
-		"release-it": "21.0.2",
+		"@n8n/node-cli": "0.48.3",
+		"release-it": "21.0.3",
 		"typescript": "6.0.3"
 	},
 	"peerDependencies": {
