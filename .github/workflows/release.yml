@@ -1,0 +1,88 @@
+name: 📋 Release
+
+on:
+  workflow_dispatch:
+  workflow_call:
+    inputs:
+      version:
+        required: true
+        type: string
+
+jobs:
+  validate_ref:
+    name: 🛡️ Validate release ref
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - name: 🚧 Require a tag for manual releases
+        if: github.event_name == 'workflow_dispatch'
+        env:
+          REF_TYPE: ${{ github.ref_type }}
+        run: |
+          if [ "$REF_TYPE" != 'tag' ]; then
+            echo '::error title=Tag required::Manual releases are only allowed for tags. Running against a branch or commit is not allowed.'
+            exit 1
+          fi
+
+      - name: 🕵️ Validate tag version format
+        env:
+          RELEASE_TAG: ${{ inputs.version || github.ref_name }}
+        run: |
+          # Only stable major.minor.patch versions, without prefixes or suffixes.
+          version_pattern='^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$'
+          if [[ ! "$RELEASE_TAG" =~ $version_pattern ]]; then
+            echo '::error title=Invalid tag format::Release tags must use major.minor.patch format, for example 1.3.0. Prefixes, suffixes, and leading zeros are not allowed.'
+            exit 1
+          fi
+
+  ci_manual:
+    if: github.event_name == 'workflow_dispatch'
+    needs: validate_ref
+    uses: ./.github/workflows/ci.yml
+
+  release:
+    name: 📋 Release
+    needs: validate_ref
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: ⬇️ Checkout repo
+        uses: actions/checkout@v7.0.1
+        with:
+          ref: ${{ inputs.version || github.ref_name }}
+          fetch-depth: 0
+          fetch-tags: true
+
+      - name: 📝 Generate changelog
+        id: changelog
+        uses: requarks/changelog-action@v1.10.3
+        with:
+          token: ${{ github.token }}
+          tag: ${{ inputs.version || github.ref_name }}
+          excludeTypes: build,docs,other,style
+          writeToFile: false
+
+      - name: ✨ Create Release
+        uses: ncipollo/release-action@v1.21.0
+        with:
+          allowUpdates: true
+          draft: false
+          tag: ${{ inputs.version || github.ref_name }}
+          name: ${{ inputs.version || github.ref_name }}
+          body: ${{ steps.changelog.outputs.changes }}
+
+  publish_manual:
+    if: github.event_name == 'workflow_dispatch'
+    needs:
+      - release
+      - ci_manual
+    permissions:
+      contents: read
+      id-token: write
+    uses: ./.github/workflows/publish.yml
+    with:
+      version: ${{ github.ref_name }}
+    secrets: inherit

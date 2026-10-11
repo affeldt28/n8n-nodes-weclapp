@@ -1,20 +1,20 @@
 name: ✅ CI
 
 on:
-  pull_request:
-  push:
-    branches:
-      - main
+  workflow_call:
 
 # Cancel in-progress runs for the same branch/PR to avoid wasting CI minutes.
 concurrency:
-  group: ci-${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
   build:
-    name: ✅ Build
+    name: 🛠️ Build
     runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
 
     steps:
       - name: ⬇️ Checkout repo
@@ -31,7 +31,7 @@ jobs:
       - name: 🔎 Run lint
         run: bun run lint
 
-      - name: 🔎 Run n8n community node lint
+      - name: 🪄 Run n8n community node lint
         run: bun run n8n-lint
 
       - name: 🏗️ Run build

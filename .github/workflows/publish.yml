@@ -1,96 +1,15 @@
-# Publishes this n8n community node package to npm on every version tag push.
-#
-# Starting May 1 2026, n8n requires all community nodes to be published via
-# GitHub Actions with npm provenance statements. This workflow satisfies that
-# requirement. Provenance lets anyone cryptographically verify that a package
-# was built by this exact workflow, from this exact repository and commit.
-#
-# ─── PREREQUISITES ─────────────────────────────────────────────────────────────
-#
-# @n8n/node-cli ≥ 0.23.0 is required. Earlier versions do not support the
-# provenance flag passed by `npm run release` in CI, and the publish step will
-# fail. Check the version installed in this project with:
-#
-#   npm list @n8n/node-cli
-#
-# To upgrade:
-#
-#   npm install --save-dev @n8n/node-cli@latest
-#
-# ─── ONE-TIME SETUP ────────────────────────────────────────────────────────────
-#
-# Option A — OIDC Trusted Publishing (recommended, no long-lived secrets):
-#   1. Log in to npmjs.com and open your package's settings.
-#   2. Under "Publish access" → "Trusted Publishers", click "Add a publisher".
-#   3. Select GitHub Actions and fill in:
-#        Repository owner: <your-github-username-or-org>
-#        Repository name:  <your-repo-name>
-#        Workflow name:    publish.yml
-#        Environment:      (leave blank unless you use GitHub Environments)
-#   4. Leave the NPM_TOKEN secret unset in this repository. GitHub's OIDC
-#      token is used instead — no secret ever touches your repo settings.
-#
-# Option B — npm Automation Token (fallback):
-#   1. On npmjs.com: Access Tokens → Generate New Token → Granular Access Token.
-#      Scope it to this package with "Read and write" publish permission.
-#   2. In GitHub: Settings → Secrets and variables → Actions → New secret.
-#      Name it NPM_TOKEN and paste the token value.
-#
-# Both options work with --provenance. Provenance is signed by GitHub's OIDC
-# infrastructure regardless of how npm authentication is handled.
-#
-
-name: 📋 Release & Publish
+name: 🚀 Publish
 
 on:
-  workflow_dispatch:
-  push:
-    tags:
-      - '[0-9]+.[0-9]+.[0-9]+'
+  workflow_call:
+    inputs:
+      version:
+        required: true
+        type: string
 
 jobs:
-  release:
-    name: 📋 Release
-    runs-on: ubuntu-latest
-
-    permissions:
-      contents: write
-
-    steps:
-      - name: ⬇️ Checkout repo
-        uses: actions/checkout@v7.0.1
-
-      - name: 🏷️ Set version
-        id: version
-        # get version from ref if trigger by tag or from package.json
-        run: |
-          if [[ ${{ github.ref }} == refs/tags/* ]]; then
-            version=${{ github.ref_name }}
-          else
-            version=$(jq -r .version package.json)
-          fi
-          echo "version=${version}" >> $GITHUB_OUTPUT
-
-      - name: 📝 Update CHANGELOG
-        id: changelog
-        uses: requarks/changelog-action@v1.10.3
-        with:
-          token: ${{ github.token }}
-          tag: ${{ steps.version.outputs.version }}
-          excludeTypes: build,docs,other,style
-          writeToFile: false
-
-      - name: 📦 Create Release
-        uses: ncipollo/release-action@v1.21.0
-        with:
-          allowUpdates: true
-          draft: false
-          tag: ${{ steps.version.outputs.version }}
-          name: ${{ steps.version.outputs.version }}
-          body: ${{ steps.changelog.outputs.changes }}
-
   publish:
-    name: 📋 Publish to npm
+    name: 🌐 Publish to npm
     runs-on: ubuntu-latest
 
     permissions:
@@ -102,8 +21,10 @@ jobs:
     steps:
       - name: ⬇️ Checkout repo
         uses: actions/checkout@v7.0.1
+        with:
+          ref: ${{ inputs.version }}
 
-      - name: ⚙️ Set up Node.js
+      - name: 🟢 Set up Node.js
         uses: actions/setup-node@v7.0.0
         with:
           node-version: 'lts/*'
@@ -117,14 +38,7 @@ jobs:
       - name: 📦 Install dependencies
         run: bun install --frozen-lockfile
 
-      - name: 📦 Release
-        # Publishes to npm with a provenance attestation (requires id-token: write above).
-        # Lint and build run automatically as part of the release process.
-        #
-        # Option A (OIDC): leave NPM_TOKEN unset — the token step is skipped and
-        #   npm uses the OIDC exchange instead.
-        # Option B (token): set NPM_TOKEN in repo secrets — it is written to
-        #   .npmrc here before publishing.
+      - name: 🧰 Release on npm
         run: |
           [ -n "$NPM_TOKEN" ] && npm config set access public && npm config set //registry.npmjs.org/:_authToken "$NPM_TOKEN"
           npm run release
