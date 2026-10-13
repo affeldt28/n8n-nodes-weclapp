@@ -50,7 +50,7 @@ export const description: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'DELETE',
-						url: '=/ticket/id/{{ $parameter.ticketId.value }}',
+						url: '=/ticket/id/{{ $parameter.ticketId }}',
 					},
 				},
 				action: 'Delete a ticket',
@@ -62,7 +62,7 @@ export const description: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '=/ticket/id/{{ $parameter.ticketId.value }}',
+						url: '=/ticket/id/{{ $parameter.ticketId }}',
 					},
 				},
 				action: 'Get ticket',
@@ -86,7 +86,7 @@ export const description: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'PUT',
-						url: '=/ticket/id/{{ $parameter.ticketId.value }}',
+						url: '=/ticket/id/{{ $parameter.ticketId }}',
 					},
 				},
 				action: 'Update a ticket',

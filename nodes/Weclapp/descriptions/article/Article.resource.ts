@@ -47,7 +47,7 @@ export const description: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '=/article/id/{{ $parameter.articleId.value }}',
+						url: '=/article/id/{{ $parameter.articleId }}',
 					},
 				},
 				action: 'Get article',

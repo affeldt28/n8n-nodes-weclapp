@@ -50,7 +50,7 @@ export const description: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'DELETE',
-						url: '=/webhook/id/{{ $parameter.webhookId.value }}',
+						url: '=/webhook/id/{{ $parameter.webhookId }}',
 					},
 				},
 				action: 'Delete a webhook',
@@ -62,7 +62,7 @@ export const description: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'GET',
-						url: '=/webhook/id/{{ $parameter.webhookId.value }}',
+						url: '=/webhook/id/{{ $parameter.webhookId }}',
 					},
 				},
 				action: 'Get webhook',
@@ -86,7 +86,7 @@ export const description: INodeProperties[] = [
 				routing: {
 					request: {
 						method: 'PUT',
-						url: '=/webhook/id/{{ $parameter.webhookId.value }}',
+						url: '=/webhook/id/{{ $parameter.webhookId }}',
 					},
 				},
 				action: 'Update a webhook',
