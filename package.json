@@ -1,6 +1,6 @@
 {
 	"name": "@affeldt28/n8n-nodes-weclapp",
-	"version": "1.2.6",
+	"version": "1.3.0",
 	"description": "n8n node for Weclapp",
 	"license": "MIT",
 	"homepage": "https://github.com/affeldt28/n8n-nodes-weclapp",
@@ -39,7 +39,8 @@
 			"dist/credentials/WeclappApi.credentials.js"
 		],
 		"nodes": [
-			"dist/nodes/Weclapp/Weclapp.node.js"
+			"dist/nodes/Weclapp/Weclapp.node.js",
+			"dist/nodes/WeclappTrigger/WeclappTrigger.node.js"
 		]
 	},
 	"publishConfig": {

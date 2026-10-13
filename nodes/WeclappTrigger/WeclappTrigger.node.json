@@ -1,0 +1,16 @@
+{
+	"node": "@affeldt28/n8n-nodes-weclapp.weclappTrigger",
+	"nodeVersion": "1.0",
+	"codexVersion": "1.0",
+	"categories": [
+		"Productivity",
+		"Sales"
+	],
+	"resources": {
+		"primaryDocumentation": [
+			{
+				"url": "https://www.weclapp.com/api/"
+			}
+		]
+	}
+}

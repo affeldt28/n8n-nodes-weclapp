@@ -135,6 +135,21 @@ No specific minimum n8n version is pinned in this package yet.
 
 ## Usage
 
+### Ticket creation trigger
+
+Add **Weclapp Trigger** to your workflow, select your **Weclapp API** credential,
+and choose **Ticket Created**. Activate the workflow to receive new ticket events.
+The node automatically registers a weclapp webhook for ticket creation and removes
+its subscription when the workflow is deactivated. Ticket updates and deletions
+do not trigger the workflow, and existing tickets are not imported.
+
+Your n8n webhook URL must be reachable from weclapp. The API token needs permission
+to create, read, and delete webhooks. For a manual test, listen for a test event
+and then create a ticket in weclapp.
+
+The trigger outputs the webhook request body. Use **Weclapp > Ticket > Get** with
+the ticket ID from the event if you need the full ticket details.
+
 For query operations, use the available query parameters to shape the weclapp request:
 
 * **Page**, **Page Size**, and **Offset** control pagination.
