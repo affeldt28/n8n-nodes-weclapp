@@ -6,6 +6,9 @@ export const includeReferencedEntitiesQueryParameter: INodeProperties = {
 	type: 'fixedCollection',
 	typeOptions: {
 		multipleValues: true,
+		fixedCollection: {
+			itemTitle: '={{ $collection.item.value.name || "Referenced Entity" }}',
+		},
 	},
 	default: {},
 	placeholder: 'Add Referenced Entity',

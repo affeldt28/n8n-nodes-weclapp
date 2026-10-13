@@ -6,6 +6,9 @@ export const propertiesQueryParameter: INodeProperties = {
 	type: 'fixedCollection',
 	typeOptions: {
 		multipleValues: true,
+		fixedCollection: {
+			itemTitle: '={{ $collection.item.value.property || "Property" }}',
+		},
 	},
 	default: {},
 	placeholder: 'Add Property',

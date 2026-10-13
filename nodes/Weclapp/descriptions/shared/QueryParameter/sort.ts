@@ -6,6 +6,9 @@ export const sortQueryParameter: INodeProperties = {
 	type: 'fixedCollection',
 	typeOptions: {
 		multipleValues: true,
+		fixedCollection: {
+			itemTitle: '={{ $collection.item.value.property || "Sort" }}',
+		},
 	},
 	default: {},
 	placeholder: 'Add Sort',
