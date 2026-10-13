@@ -11,5 +11,8 @@
 
 	"cSpell.words": [
 		"Weclapp"
-	]
+	],
+	"[json]": {
+		"editor.defaultFormatter": "biomejs.biome"
+	}
 }
