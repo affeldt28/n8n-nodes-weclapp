@@ -29,7 +29,7 @@ export const includeReferencedEntitiesQueryParameter: INodeProperties = {
 		request: {
 			qs: {
 				includeReferencedEntities:
-					'={{$parameter.includeReferencedEntities.entity.map((e) => e.name).join(",")}}',
+					'={{($parameter.options.includeReferencedEntities?.entity ?? []).map(e => e.name.trim()).filter(Boolean).join(",") || undefined}}',
 			},
 		},
 	},
