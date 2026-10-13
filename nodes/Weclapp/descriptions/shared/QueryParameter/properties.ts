@@ -29,7 +29,8 @@ export const propertiesQueryParameter: INodeProperties = {
 	routing: {
 		request: {
 			qs: {
-				properties: '={{$parameter.properties.items.map(item => item.property).join(",")}}',
+				properties:
+					'={{($parameter.options.properties?.items ?? []).map(item => item.property.trim()).filter(Boolean).join(",") || undefined}}',
 			},
 		},
 	},
