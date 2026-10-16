@@ -12,12 +12,10 @@ export async function paginateAll(
 	const items: INodeExecutionData[] = [];
 	const pageSize = 100;
 	// Return All always starts at the beginning, regardless of saved manual settings.
-	const {
-		page: _page,
-		pageSize: _pageSize,
-		offset: _offset,
-		...query
-	} = requestOptions.options.qs ?? {};
+	const query = { ...(requestOptions.options.qs ?? {}) };
+	delete query.page;
+	delete query.pageSize;
+	delete query.offset;
 
 	for (let page = 1; ; page++) {
 		requestOptions.options.qs = { ...query, page, pageSize };
@@ -37,7 +35,7 @@ export const paginationQueryParameters: INodeProperties[] = [
 	{
 		displayName: 'Return All',
 		name: 'returnAll',
-		description: 'Whether to return all results by automatically fetching every page',
+		description: 'Whether to return all results or only up to a given limit',
 		type: 'boolean',
 		default: false,
 		routing: {
