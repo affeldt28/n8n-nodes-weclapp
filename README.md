@@ -152,7 +152,7 @@ the ticket ID from the event if you need the full ticket details.
 
 For query operations, use the available query parameters to shape the weclapp request:
 
-* **Return All** automatically fetches every page and outputs each matching record as an n8n item. Filters, sorting, and selected properties still apply.
+* **Return All** automatically fetches every page and returns one response with all matching records nested in `result`. Other top-level arrays and arrays inside `additionalProperties` are also combined across pages; other fields retain their first returned value. Filters, sorting, and selected properties still apply.
 * With **Return All** off (the default), enable **Use Pagination** to control **Page**, **Page Size**, and **Offset** manually.
 * **Sort** adds one or more sort criteria.
 * **Filter Mode** supports basic n8n filters or advanced weclapp filter operators.

@@ -1,5 +1,6 @@
 import type {
 	DeclarativeRestApiSettings,
+	IDataObject,
 	IExecutePaginationFunctions,
 	INodeExecutionData,
 	INodeProperties,
@@ -20,14 +21,46 @@ export async function paginateAll(
 	for (let page = 1; ; page++) {
 		requestOptions.options.qs = { ...query, page, pageSize };
 		const response = await this.makeRoutingRequest(requestOptions);
-		const results = response.flatMap((item) => {
+		let resultCount = 0;
+		for (const item of response) {
 			if (!Array.isArray(item.json.result)) {
 				throw new Error('Cannot paginate Weclapp results: expected a result array');
 			}
-			return item.json.result.map((json) => ({ ...item, json }));
-		});
-		items.push(...results);
-		if (results.length < pageSize) return items;
+			resultCount += item.json.result.length;
+			if (items.length === 0) {
+				items.push({ ...item, json: { ...item.json } });
+				continue;
+			}
+			const combined = items[0].json;
+			for (const [key, value] of Object.entries(item.json)) {
+				if (Array.isArray(value)) {
+					const previous = combined[key];
+					combined[key] = [...(Array.isArray(previous) ? previous : []), ...value];
+				} else if (key === 'additionalProperties' && value && typeof value === 'object') {
+					const previous = combined[key];
+					const properties: IDataObject = {
+						...(previous && typeof previous === 'object' && !Array.isArray(previous)
+							? previous
+							: {}),
+					};
+					for (const [name, values] of Object.entries(value)) {
+						if (Array.isArray(values)) {
+							const existing = properties[name];
+							properties[name] = [
+								...(Array.isArray(existing) ? existing : []),
+								...values,
+							];
+						} else if (!(name in properties)) {
+							properties[name] = values;
+						}
+					}
+					combined[key] = properties;
+				} else if (!(key in combined)) {
+					combined[key] = value;
+				}
+			}
+		}
+		if (resultCount < pageSize) return items;
 	}
 }
 
