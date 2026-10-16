@@ -1,4 +1,21 @@
-import { type INodeProperties, updateDisplayOptions } from 'n8n-workflow';
+import {
+	type INodeProperties,
+	type INodePropertyOptions,
+	updateDisplayOptions,
+} from 'n8n-workflow';
+
+export const queryIdOption: INodePropertyOptions = {
+	name: 'Get',
+	description: 'Retrieve a party',
+	value: 'queryId',
+	routing: {
+		request: {
+			method: 'GET',
+			url: '=/party/id/{{ $parameter.partyId }}',
+		},
+	},
+	action: 'Get party',
+};
 
 const properties: INodeProperties[] = [
 	{
@@ -28,4 +45,4 @@ const displayOptions = {
 	},
 };
 
-export const description = updateDisplayOptions(displayOptions, properties);
+export const queryIdDescription = updateDisplayOptions(displayOptions, properties);

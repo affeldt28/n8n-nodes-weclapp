@@ -1,8 +1,8 @@
 import type { INodeProperties } from 'n8n-workflow';
-import * as count from './count.operation';
-import * as create from './create.operation';
-import * as query from './query.operation';
-import * as queryId from './queryId.operation';
+import { countDescription, countOption } from './count.operation';
+import { createDescription, createOption } from './create.operation';
+import { queryDescription, queryOption } from './query.operation';
+import { queryIdDescription, queryIdOption } from './queryId.operation';
 
 export const description: INodeProperties[] = [
 	{
@@ -16,59 +16,10 @@ export const description: INodeProperties[] = [
 				resource: ['party'],
 			},
 		},
-		options: [
-			{
-				name: 'Get',
-				description: 'Retrieve a party',
-				value: 'queryId',
-				routing: {
-					request: {
-						method: 'GET',
-						url: '=/party/id/{{ $parameter.partyId }}',
-					},
-				},
-				action: 'Get party',
-			},
-			{
-				name: 'Get Many',
-				description: 'Retrieve a list of parties',
-				value: 'query',
-				routing: {
-					request: {
-						method: 'GET',
-						url: '/party',
-					},
-				},
-				action: 'Get many parties',
-			},
-			{
-				name: 'Create',
-				description: 'Create a party',
-				value: 'create',
-				routing: {
-					request: {
-						method: 'POST',
-						url: '/party',
-					},
-				},
-				action: 'Create party',
-			},
-			{
-				name: 'Count',
-				description: 'Count parties',
-				value: 'count',
-				routing: {
-					request: {
-						method: 'GET',
-						url: '/party/count',
-					},
-				},
-				action: 'Count parties',
-			},
-		],
+		options: [queryIdOption, queryOption, createOption, countOption],
 	},
-	...query.description,
-	...queryId.description,
-	...create.description,
-	...count.description,
+	...queryDescription,
+	...queryIdDescription,
+	...createDescription,
+	...countDescription,
 ];

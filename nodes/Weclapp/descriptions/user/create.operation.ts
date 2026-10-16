@@ -1,6 +1,27 @@
-import { type INodeProperties, updateDisplayOptions } from 'n8n-workflow';
+import {
+	type INodeProperties,
+	type INodePropertyOptions,
+	updateDisplayOptions,
+} from 'n8n-workflow';
 import { customAttributesBodyProperties } from '../shared/BodyProperties';
 import { dryRunQueryParameter } from '../shared/QueryParameter';
+
+export const createOption: INodePropertyOptions = {
+	name: 'Create',
+	description: 'Create a user',
+	value: 'create',
+	routing: {
+		request: {
+			method: 'POST',
+			url: '/user',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			json: true,
+		},
+	},
+	action: 'Create user',
+};
 
 const properties: INodeProperties[] = [
 	dryRunQueryParameter,
@@ -239,4 +260,4 @@ const displayOptions = {
 	},
 };
 
-export const description = updateDisplayOptions(displayOptions, properties);
+export const createDescription = updateDisplayOptions(displayOptions, properties);

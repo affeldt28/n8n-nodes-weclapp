@@ -1,6 +1,23 @@
-import { type INodeProperties, updateDisplayOptions } from 'n8n-workflow';
+import {
+	type INodeProperties,
+	type INodePropertyOptions,
+	updateDisplayOptions,
+} from 'n8n-workflow';
 import { dryRunQueryParameter } from '../shared/QueryParameter';
 import { createUpdateProperties, webhookIdParameter } from './shared.properties';
+
+export const updateOption: INodePropertyOptions = {
+	name: 'Update',
+	description: 'Update a webhook',
+	value: 'update',
+	routing: {
+		request: {
+			method: 'PUT',
+			url: '=/webhook/id/{{ $parameter.webhookId }}',
+		},
+	},
+	action: 'Update a webhook',
+};
 
 const properties: INodeProperties[] = [
 	webhookIdParameter,
@@ -15,4 +32,4 @@ const displayOptions = {
 	},
 };
 
-export const description = updateDisplayOptions(displayOptions, properties);
+export const updateDescription = updateDisplayOptions(displayOptions, properties);

@@ -1,7 +1,7 @@
 import type { INodeProperties } from 'n8n-workflow';
-import * as count from './count.operation';
-import * as query from './query.operation';
-import * as queryId from './queryId.operation';
+import { countDescription, countOption } from './count.operation';
+import { queryDescription, queryOption } from './query.operation';
+import { queryIdDescription, queryIdOption } from './queryId.operation';
 
 export const description: INodeProperties[] = [
 	{
@@ -15,46 +15,9 @@ export const description: INodeProperties[] = [
 				resource: ['article'],
 			},
 		},
-		options: [
-			{
-				name: 'Get Many',
-				description: 'Retrieve a list of articles',
-				value: 'query',
-				routing: {
-					request: {
-						method: 'GET',
-						url: '/article',
-					},
-				},
-				action: 'Get many articles',
-			},
-			{
-				name: 'Count',
-				description: 'Count articles',
-				value: 'count',
-				routing: {
-					request: {
-						method: 'GET',
-						url: '/article/count',
-					},
-				},
-				action: 'Count articles',
-			},
-			{
-				name: 'Get',
-				description: 'Retrieve an article',
-				value: 'queryId',
-				routing: {
-					request: {
-						method: 'GET',
-						url: '=/article/id/{{ $parameter.articleId }}',
-					},
-				},
-				action: 'Get article',
-			},
-		],
+		options: [queryOption, countOption, queryIdOption],
 	},
-	...query.description,
-	...count.description,
-	...queryId.description,
+	...queryDescription,
+	...countDescription,
+	...queryIdDescription,
 ];

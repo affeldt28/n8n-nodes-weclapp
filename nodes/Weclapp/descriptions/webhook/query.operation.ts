@@ -1,10 +1,27 @@
-import { type INodeProperties, updateDisplayOptions } from 'n8n-workflow';
+import {
+	type INodeProperties,
+	type INodePropertyOptions,
+	updateDisplayOptions,
+} from 'n8n-workflow';
 import {
 	filterQueryParameters,
 	optionsQueryParameter,
 	paginationQueryParameters,
 	sortQueryParameter,
 } from '../shared/QueryParameter';
+
+export const queryOption: INodePropertyOptions = {
+	name: 'Get Many',
+	description: 'Retrieve a list of webhooks',
+	value: 'query',
+	routing: {
+		request: {
+			method: 'GET',
+			url: '/webhook',
+		},
+	},
+	action: 'Get many webhooks',
+};
 
 const properties: INodeProperties[] = [
 	...paginationQueryParameters,
@@ -20,4 +37,4 @@ const displayOptions = {
 	},
 };
 
-export const description = updateDisplayOptions(displayOptions, properties);
+export const queryDescription = updateDisplayOptions(displayOptions, properties);

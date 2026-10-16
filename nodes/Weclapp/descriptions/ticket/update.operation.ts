@@ -1,6 +1,23 @@
-import { type INodeProperties, updateDisplayOptions } from 'n8n-workflow';
+import {
+	type INodeProperties,
+	type INodePropertyOptions,
+	updateDisplayOptions,
+} from 'n8n-workflow';
 import { dryRunQueryParameter } from '../shared/QueryParameter';
 import { createUpdateProperties, ticketIdParameter } from './shared.properties';
+
+export const updateOption: INodePropertyOptions = {
+	name: 'Update',
+	description: 'Update a ticket',
+	value: 'update',
+	routing: {
+		request: {
+			method: 'PUT',
+			url: '=/ticket/id/{{ $parameter.ticketId }}',
+		},
+	},
+	action: 'Update a ticket',
+};
 
 const properties: INodeProperties[] = [
 	ticketIdParameter,
@@ -15,4 +32,4 @@ const displayOptions = {
 	},
 };
 
-export const description = updateDisplayOptions(displayOptions, properties);
+export const updateDescription = updateDisplayOptions(displayOptions, properties);

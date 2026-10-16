@@ -1,6 +1,6 @@
 import type { INodeProperties } from 'n8n-workflow';
-import * as count from './count.operation';
-import * as query from './query.operation';
+import { countDescription, countOption } from './count.operation';
+import { queryDescription, queryOption } from './query.operation';
 
 export const description: INodeProperties[] = [
 	{
@@ -26,33 +26,8 @@ export const description: INodeProperties[] = [
 				resource: ['recurringInvoice'],
 			},
 		},
-		options: [
-			{
-				name: 'Get Many',
-				description: 'Retrieve a list of recurring invoices',
-				value: 'query',
-				routing: {
-					request: {
-						method: 'GET',
-						url: '/recurringInvoice',
-					},
-				},
-				action: 'Get many recurring invoices',
-			},
-			{
-				name: 'Count',
-				description: 'Count recurring invoices',
-				value: 'count',
-				routing: {
-					request: {
-						method: 'GET',
-						url: '/recurringInvoice/count',
-					},
-				},
-				action: 'Count recurring invoices',
-			},
-		],
+		options: [queryOption, countOption],
 	},
-	...query.description,
-	...count.description,
+	...queryDescription,
+	...countDescription,
 ];

@@ -1,4 +1,8 @@
-import { type INodeProperties, updateDisplayOptions } from 'n8n-workflow';
+import {
+	type INodeProperties,
+	type INodePropertyOptions,
+	updateDisplayOptions,
+} from 'n8n-workflow';
 import {
 	COUNTRY_CODES,
 	CUSTOMER_SALES_CHANNELS,
@@ -7,6 +11,19 @@ import {
 	SOCIAL_MEDIA_CODES,
 } from '../shared/enum';
 import { dryRunQueryParameter } from '../shared/QueryParameter';
+
+export const createOption: INodePropertyOptions = {
+	name: 'Create',
+	description: 'Create a party',
+	value: 'create',
+	routing: {
+		request: {
+			method: 'POST',
+			url: '/party',
+		},
+	},
+	action: 'Create party',
+};
 
 const properties: INodeProperties[] = [
 	dryRunQueryParameter,
@@ -1660,4 +1677,4 @@ const displayOptions = {
 	},
 };
 
-export const description = updateDisplayOptions(displayOptions, properties);
+export const createDescription = updateDisplayOptions(displayOptions, properties);
