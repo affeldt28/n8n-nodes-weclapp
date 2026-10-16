@@ -1,10 +1,55 @@
-import { INodeProperties } from 'n8n-workflow';
+import type {
+	DeclarativeRestApiSettings,
+	IExecutePaginationFunctions,
+	INodeExecutionData,
+	INodeProperties,
+} from 'n8n-workflow';
+
+export async function paginateAll(
+	this: IExecutePaginationFunctions,
+	requestOptions: DeclarativeRestApiSettings.ResultOptions,
+): Promise<INodeExecutionData[]> {
+	const items: INodeExecutionData[] = [];
+	const pageSize = 100;
+	// Return All always starts at the beginning, regardless of saved manual settings.
+	const {
+		page: _page,
+		pageSize: _pageSize,
+		offset: _offset,
+		...query
+	} = requestOptions.options.qs ?? {};
+
+	for (let page = 1; ; page++) {
+		requestOptions.options.qs = { ...query, page, pageSize };
+		const response = await this.makeRoutingRequest(requestOptions);
+		const results = response.flatMap((item) => {
+			if (!Array.isArray(item.json.result)) {
+				throw new Error('Cannot paginate Weclapp results: expected a result array');
+			}
+			return item.json.result.map((json) => ({ ...item, json }));
+		});
+		items.push(...results);
+		if (results.length < pageSize) return items;
+	}
+}
 
 export const paginationQueryParameters: INodeProperties[] = [
+	{
+		displayName: 'Return All',
+		name: 'returnAll',
+		description: 'Whether to return all results by automatically fetching every page',
+		type: 'boolean',
+		default: false,
+		routing: {
+			send: { paginate: '={{ $parameter.returnAll }}' },
+			operations: { pagination: paginateAll },
+		},
+	},
 	{
 		displayName: 'Use Pagination',
 		name: 'usePagination',
 		description: 'Whether to use pagination for the request',
+		displayOptions: { show: { returnAll: [false] } },
 		type: 'boolean',
 		default: false,
 	},
@@ -21,6 +66,7 @@ export const paginationQueryParameters: INodeProperties[] = [
 		displayOptions: {
 			show: {
 				usePagination: [true],
+				returnAll: [false],
 			},
 		},
 		routing: {
@@ -44,6 +90,7 @@ export const paginationQueryParameters: INodeProperties[] = [
 		displayOptions: {
 			show: {
 				usePagination: [true],
+				returnAll: [false],
 			},
 		},
 		routing: {
@@ -66,6 +113,7 @@ export const paginationQueryParameters: INodeProperties[] = [
 		displayOptions: {
 			show: {
 				usePagination: [true],
+				returnAll: [false],
 			},
 		},
 		routing: {

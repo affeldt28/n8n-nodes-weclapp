@@ -46,7 +46,7 @@ This node currently supports the following weclapp resources and operations:
 | Query party                      | [GET /party](https://www.weclapp.com/api/#get-/party)                                                                                                     | ✅           |
 | Create party                     | [POST /party](https://www.weclapp.com/api/#post-/party)                                                                                                   | ✅           |
 | Count parties                    | [GET /party/count](https://www.weclapp.com/api/#get-/party/count)                                                                                         | ✅           |
-| Query party by id                | [GET /party/id/{id}](https://www.weclapp.com/api/#get-/party/id/-id-)                                                                                     | 🚫           |
+| Query party by id                | [GET /party/id/{id}](https://www.weclapp.com/api/#get-/party/id/-id-)                                                                                     | ✅           |
 | Update party                     | [PUT /party/id/{id}](https://www.weclapp.com/api/#put-/party/id/-id-)                                                                                     | 🚫           |
 | Delete party                     | [DELETE /party/id/{id}](https://www.weclapp.com/api/#delete-/party/id/-id-)                                                                               | 🚫           |
 | Create public page               | [POST /party/id/{id}/createPublicPage](https://www.weclapp.com/api/#post-/party/id/-id-/createPublicPage)                                                 | 🚫           |
@@ -152,7 +152,8 @@ the ticket ID from the event if you need the full ticket details.
 
 For query operations, use the available query parameters to shape the weclapp request:
 
-* **Page**, **Page Size**, and **Offset** control pagination.
+* **Return All** automatically fetches every page and outputs each matching record as an n8n item. Filters, sorting, and selected properties still apply.
+* With **Return All** off (the default), enable **Use Pagination** to control **Page**, **Page Size**, and **Offset** manually.
 * **Sort** adds one or more sort criteria.
 * **Filter Mode** supports basic n8n filters or advanced weclapp filter operators.
 * **Properties** limits the returned fields.
