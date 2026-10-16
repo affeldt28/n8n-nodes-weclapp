@@ -112,57 +112,75 @@ export const filterQueryParameters: INodeProperties[] = [
 				name: 'conditions',
 				values: [
 					{
-						displayName: 'Combine With',
-						name: 'combination',
-						type: 'options',
-						default: 'and',
-						options: [
-							{
-								name: 'AND',
-								value: 'and',
-							},
-							{
-								name: 'OR',
-								value: 'or',
-							},
-							{
-								name: 'Named OR Group',
-								value: 'orGroup',
-							},
-						],
-					},
-					{
-						displayName: 'Operator',
-						name: 'operator',
-						type: 'options',
-						default: '',
-					},
-					{
-						displayName: 'OR Group Name',
-						name: 'groupName',
-						description:
-							'Conditions with the same group name are ORed together;	separate groups are ANDed',
-						type: 'string',
-						default: 'Group1',
-						required: true,
-					},
-					{
 						displayName: 'Property',
 						name: 'property',
 						description:
 							'Weclapp property to filter, including nested properties such as customAttribute3387.value',
 						type: 'string',
 						default: '',
-						placeholder: 'e.g. createdDate',
+						placeholder: 'e.g. customerNumber',
 						required: true,
+					},
+					{
+						displayName: 'Operator',
+						name: 'operator',
+						type: 'options',
+						default: 'eq',
+						options: [
+							{ name: 'Equals', value: 'eq' },
+							{ name: 'Does Not Equal', value: 'ne' },
+							{ name: 'Less Than', value: 'lt' },
+							{ name: 'Less Than or Equal', value: 'le' },
+							{ name: 'Greater Than', value: 'gt' },
+							{ name: 'Greater Than or Equal', value: 'ge' },
+							{ name: 'Is Empty (Null)', value: 'null' },
+							{ name: 'Is Not Empty (Not Null)', value: 'notnull' },
+							{ name: 'Matches Pattern', value: 'like' },
+							{ name: 'Does Not Match Pattern', value: 'notlike' },
+							{ name: 'Matches Pattern (Case Insensitive)', value: 'ilike' },
+							{
+								name: 'Does Not Match Pattern (Case Insensitive)',
+								value: 'notilike',
+							},
+							{ name: 'Is In List', value: 'in' },
+							{ name: 'Is Not In List', value: 'notin' },
+						],
 					},
 					{
 						displayName: 'Value',
 						name: 'value',
 						description:
-							"For In and Not In, enter a JSON array such as	['1006','1007']",
+							'For lists, use a JSON array, e.g. ["1006","1007"] or [1006,1007]. For patterns, % matches any text and _ matches one character, e.g. %Acme%.',
 						type: 'string',
 						default: '',
+						displayOptions: {
+							hide: { operator: ['null', 'notnull'] },
+						},
+					},
+					{
+						displayName: 'Match',
+						name: 'combination',
+						type: 'options',
+						default: 'and',
+						description:
+							'All required conditions and each OR group must match. Within an OR group, at least one condition must match.',
+						options: [
+							{ name: 'Required (AND)', value: 'and' },
+							{ name: 'Any of These (OR)', value: 'or' },
+							{ name: 'Any in a Named Group (OR)', value: 'orGroup' },
+						],
+					},
+					{
+						displayName: 'OR Group Name',
+						name: 'groupName',
+						description:
+							'Use the same name for alternatives, e.g. Group1. Separate groups must all match.',
+						type: 'string',
+						default: 'Group1',
+						required: true,
+						displayOptions: {
+							show: { combination: ['orGroup'] },
+						},
 					},
 				],
 			},
@@ -252,7 +270,7 @@ function buildBasicFilterQuery(filters: FilterValue): IDataObject {
 
 function getAdvancedFilterKey(condition: AdvancedFilterCondition): string {
 	const property = condition.property?.trim() ?? '';
-	const operator = condition.operator ?? 'eq';
+	const operator = condition.operator || 'eq';
 
 	if (condition.combination === 'or') {
 		return `or-${property}-${operator}`;
