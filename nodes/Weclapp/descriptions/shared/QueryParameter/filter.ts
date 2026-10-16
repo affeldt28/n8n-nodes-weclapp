@@ -98,6 +98,10 @@ export const filterQueryParameters: INodeProperties[] = [
 		type: 'fixedCollection',
 		typeOptions: {
 			multipleValues: true,
+			fixedCollection: {
+				itemTitle:
+					'={{ $collection.item.value.property ? (($collection.item.value.combination === "or" ? "or-" : $collection.item.value.combination === "orGroup" ? "or" + ($collection.item.value.groupName || "").trim() + "-" : "") + $collection.item.value.property.trim() + "-" + ($collection.item.value.operator || "eq") + (["null", "notnull"].includes($collection.item.value.operator) ? "" : "=" + ($collection.item.value.value ?? ""))) : "Condition" }}',
+			},
 		},
 		default: {},
 		placeholder: 'Add Filter',
