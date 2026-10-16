@@ -14,6 +14,9 @@ export const updateOption: INodePropertyOptions = {
 		request: {
 			method: 'PUT',
 			url: '=/ticket/id/{{ $parameter.ticketId }}',
+			qs: {
+				ignoreMissingProperties: true,
+			},
 		},
 	},
 	action: 'Update a ticket',
