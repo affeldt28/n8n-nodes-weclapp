@@ -110,6 +110,7 @@ export const filterQueryParameters: INodeProperties[] = [
 			{
 				displayName: 'Condition',
 				name: 'conditions',
+				// eslint-disable-next-line n8n-nodes-base/node-param-fixed-collection-type-unsorted-items -- Keep conditions in the order to be logically correct
 				values: [
 					{
 						displayName: 'Property',
@@ -127,35 +128,32 @@ export const filterQueryParameters: INodeProperties[] = [
 						type: 'options',
 						default: 'eq',
 						options: [
-							{ name: 'Equals', value: 'eq' },
 							{ name: 'Does Not Equal', value: 'ne' },
-							{ name: 'Less Than', value: 'lt' },
-							{ name: 'Less Than or Equal', value: 'le' },
-							{ name: 'Greater Than', value: 'gt' },
-							{ name: 'Greater Than or Equal', value: 'ge' },
-							{ name: 'Is Empty (Null)', value: 'null' },
-							{ name: 'Is Not Empty (Not Null)', value: 'notnull' },
-							{ name: 'Matches Pattern', value: 'like' },
 							{ name: 'Does Not Match Pattern', value: 'notlike' },
-							{ name: 'Matches Pattern (Case Insensitive)', value: 'ilike' },
 							{
 								name: 'Does Not Match Pattern (Case Insensitive)',
 								value: 'notilike',
 							},
+							{ name: 'Equals', value: 'eq' },
+							{ name: 'Greater Than', value: 'gt' },
+							{ name: 'Greater Than or Equal', value: 'ge' },
+							{ name: 'Is Empty (Null)', value: 'null' },
 							{ name: 'Is In List', value: 'in' },
+							{ name: 'Is Not Empty (Not Null)', value: 'notnull' },
 							{ name: 'Is Not In List', value: 'notin' },
+							{ name: 'Less Than', value: 'lt' },
+							{ name: 'Less Than or Equal', value: 'le' },
+							{ name: 'Matches Pattern', value: 'like' },
+							{ name: 'Matches Pattern (Case Insensitive)', value: 'ilike' },
 						],
 					},
 					{
 						displayName: 'Value',
 						name: 'value',
 						description:
-							'For lists, use a JSON array, e.g. ["1006","1007"] or [1006,1007]. For patterns, % matches any text and _ matches one character, e.g. %Acme%.',
+							"For lists, use a JSON array, e.g.	['1006','1007']	or	[1006,1007]. For patterns,	%	matches any text and _ matches one character, e.g.	%Acme%.",
 						type: 'string',
 						default: '',
-						displayOptions: {
-							hide: { operator: ['null', 'notnull'] },
-						},
 					},
 					{
 						displayName: 'Match',
@@ -165,9 +163,18 @@ export const filterQueryParameters: INodeProperties[] = [
 						description:
 							'All required conditions and each OR group must match. Within an OR group, at least one condition must match.',
 						options: [
-							{ name: 'Required (AND)', value: 'and' },
-							{ name: 'Any of These (OR)', value: 'or' },
-							{ name: 'Any in a Named Group (OR)', value: 'orGroup' },
+							{
+								name: 'Required (AND)',
+								value: 'and',
+							},
+							{
+								name: 'Any of These (OR)',
+								value: 'or',
+							},
+							{
+								name: 'Any in a Named Group (OR)',
+								value: 'orGroup',
+							},
 						],
 					},
 					{
@@ -178,9 +185,6 @@ export const filterQueryParameters: INodeProperties[] = [
 						type: 'string',
 						default: 'Group1',
 						required: true,
-						displayOptions: {
-							show: { combination: ['orGroup'] },
-						},
 					},
 				],
 			},
