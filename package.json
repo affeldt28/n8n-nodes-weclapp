@@ -47,9 +47,9 @@
 		"access": "public"
 	},
 	"devDependencies": {
-		"@biomejs/biome": "2.5.13",
-		"@n8n/node-cli": "0.47.2",
-		"release-it": "21.0.2",
+		"@biomejs/biome": "2.5.15",
+		"@n8n/node-cli": "0.52.2",
+		"release-it": "21.1.1",
 		"typescript": "6.0.3"
 	},
 	"peerDependencies": {
