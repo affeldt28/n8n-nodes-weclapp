@@ -114,10 +114,9 @@ export const filterQueryParameters: INodeProperties[] = [
 			{
 				displayName: 'Condition',
 				name: 'conditions',
-				// eslint-disable-next-line n8n-nodes-base/node-param-fixed-collection-type-unsorted-items -- Keep conditions in the order to be logically correct
 				values: [
 					{
-						displayName: 'Property',
+						displayName: '1. Property',
 						name: 'property',
 						description:
 							'Weclapp property to filter, including nested properties such as customAttribute3387.value',
@@ -127,7 +126,7 @@ export const filterQueryParameters: INodeProperties[] = [
 						required: true,
 					},
 					{
-						displayName: 'Operator',
+						displayName: '2. Operator',
 						name: 'operator',
 						type: 'options',
 						default: 'eq',
@@ -152,7 +151,7 @@ export const filterQueryParameters: INodeProperties[] = [
 						],
 					},
 					{
-						displayName: 'Value',
+						displayName: '3. Value',
 						name: 'value',
 						description:
 							"For lists, use a JSON array, e.g.	['1006','1007']	or	[1006,1007]. For patterns,	%	matches any text and _ matches one character, e.g.	%Acme%.",
@@ -160,7 +159,7 @@ export const filterQueryParameters: INodeProperties[] = [
 						default: '',
 					},
 					{
-						displayName: 'Match',
+						displayName: '4. Match',
 						name: 'combination',
 						type: 'options',
 						default: 'and',
@@ -182,7 +181,7 @@ export const filterQueryParameters: INodeProperties[] = [
 						],
 					},
 					{
-						displayName: 'OR Group Name',
+						displayName: '5. OR Group Name',
 						name: 'groupName',
 						description:
 							'Use the same name for alternatives, e.g. Group1. Separate groups must all match.',
